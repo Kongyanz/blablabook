@@ -1,0 +1,166 @@
+/* Palette de couleurs */
+:root {
+  --dark-blue: #162b3d;
+  --light-cream: #e3d9c0;
+  --sand: #d6c098;
+  --charcoal: #565450;
+  --pale-gold: #d7c8a8;
+}
+
+/* Styles globaux */
+body {
+  background-color: var(--light-cream);
+  color: var(--dark-blue);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* Header */
+.header {
+  background-color: var(--dark-blue);
+  color: var(--light-cream);
+  padding: 20px;
+  text-align: center;
+}
+
+.nav-bar {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar li {
+  margin: 0 15px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: var(--light-cream);
+  font-family: 'Merriweather', serif;
+}
+
+.search-bar {
+  margin: 20px auto;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--pale-gold);
+  padding: 5px 10px;
+}
+
+.search-bar input {
+  border: none;
+  flex: 1;
+  padding: 5px;
+  border-radius: 20px;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* Barre de boutons en haut a droite */
+.button-bar {
+  position: fixed; /* Pour rester aligné sur la droite */
+  top: 50px; /* Distance par rapport au haut */
+  right: 10px; /* Distance par rapport au côté droit */
+  display: flex;
+  flex-direction: row; /* Disposition horizontale */
+  gap: 15px; /* Espacement entre les boutons */
+}
+
+
+button {
+  background-color: var(--pale-gold); /* Couleur pale gold */
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: var(--dark-blue); /* Bleu foncé */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--sand); /* Couleur sand plus clair */
+}
+
+button:focus {
+  outline: 2px solid var(--dark-blue);
+}
+
+.button-container p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: var(--charcoal); /* Charcoal */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Main Content */
+.books-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-card {
+  background-color: var(--sand);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.book-card h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 10px 0;
+}
+
+.book-card p {
+  color: var(--charcoal);
+}
+
+.button-bar {
+  position: absolute; /* Positionnement par rapport au parent ou au body */
+  top: 10px; /* Distance par rapport au haut de la page */
+  right: 10px; /* Distance par rapport au côté droit */
+  display: flex;
+  flex-direction: row; /* Disposition en ligne horizontale */
+  gap: 15px; /* Espacement entre les boutons */
+}
+
+button {
+  background-color: var(--pale-gold); /* Couleur pale gold */
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: var(--dark-blue); /* Bleu foncé */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--sand); /* Couleur sand plus clair */
+}
+
+button:focus {
+  outline: 2px solid var(--dark-blue);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--sand);
+  color: var(--charcoal);
+  padding: 20px;
+  text-align: center;
+}
