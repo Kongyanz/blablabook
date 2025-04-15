@@ -19,7 +19,7 @@ body {
 .header {
   background-color: var(--dark-blue);
   color: var(--light-cream);
-  padding: 20px;
+  padding: 40px;
   text-align: center;
 }
 
@@ -32,7 +32,7 @@ body {
 }
 
 .nav-bar li {
-  margin: 0 15px;
+  margin:  15px;
 }
 
 .nav-bar a {
@@ -46,7 +46,7 @@ body {
   max-width: 300px;
   display: flex;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: var(--pale-gold);
   padding: 5px 10px;
 }
@@ -157,10 +157,92 @@ button:focus {
   outline: 2px solid var(--dark-blue);
 }
 
+/* User Page */
+.book-section {
+  padding: 40px 60px;
+}
+h2 {
+  margin-bottom: 20px;
+}
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.book {
+  width: 180px;
+  text-align: center;
+}
+.book img {
+  width: 100%;
+  height: 200px;
+  background-color: #ddd;
+}
+/* Book-detailes Page */
+.book-details {
+  display: flex;
+  gap: 20px;
+}
+.book-details img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  background-color: lightgray;
+}
+.book-info {
+  max-width: 600px;
+}
+.book-info h2 {
+  margin-top: 0;
+}
+.action-buttons button {
+  margin: 10px 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 45px;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+}
+/*Library Page */
+.library {
+   display: grid; /* Creates a grid layout for the library section */
+   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Automatically adjusts columns based on available space */
+   gap: 10px; /* Adds spacing between grid items */
+   padding: 115px 0; /* Adds vertical padding to the library section */
+}
+.library .book {
+   background-color: #d6c098; /* Light gray background for each book */
+   height: 110px; /* Fixed height for each book item */
+   display: flex; /* Enables flexbox for centering content */
+   justify-content: center; /* Horizontally centers content */
+   align-items: center; /* Vertically centers content */
+   border-radius: 9%; /* Rounds the corners of each book item */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a 3D effect */
+}
+/*User Informations Page */
+main {
+  padding: 60px;
+  text-align: center;
+}
+main label {
+  display: block;
+  margin: 20px 0;
+  font-weight: bold;
+}
+main input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+}
+
+
+
 /* Footer */
 .footer {
   background-color: var(--sand);
   color: var(--charcoal);
-  padding: 20px;
+  padding: 15px;
   text-align: center;
 }

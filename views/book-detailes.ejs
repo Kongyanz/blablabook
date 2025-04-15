@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlablaBook - Accueil</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>BLABLABOOK</h1>
+        <!--barrede recherche au centre du header -->
+        <div class="search-bar">
+            <form action="/search" method="GET">
+                <input type="text" name="query" placeholder="Rechercher..." aria-label="Champ de recherche">
+                <button aria-labe="lancer la recherche">🔍</button>
+            </form>
+        </div>
+        <!-- section bouton -->
+        <section class="button-bar">
+            <button aria-label="Retour à la page d'accueil">Accueil</button>
+            <button aria-label="Explorer la bibliothèque numérique">Bibliothèque</button>
+            <button aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</button>
+            <button aria-label="Consultez votre profil utilisateur">Utilisateur</button>
+        </section>
+        <section>
+            <div class="book-details">
+                <img src="#" alt="IMG BOOK">
+                <div class="book-info">
+                    <h2>Les Misérables</h2>
+                    <p><strong>Genre:</strong> Roman</p>
+                    <p><strong>Public cible:</strong> Adultes</p>
+                    <p><strong>Année de publication:</strong> 1862</p>
+                    <p><strong>Description:</strong> Roman littérature française sur des thèmes universels: injustice,
+                        amour, rédemption...</p>
+                    <div class="action-buttons">
+                        <button>Lu</button>
+                        <button>À Lire</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>&copy; 2025 Prototype réalisé par Heba Gloria Farida</p>
+        </footer>
+
+
+</body>
+
+</html>
