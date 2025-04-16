@@ -50,16 +50,16 @@ VALUES
 ('9780385504201', '/public/images/davinciCode.jpg', 'The Da Vinci Code', 2003, 'Secrets hidden in art history.'),
 ('9780060853983', '/public/images/goodOmens.jpg', 'Good Omens', 1990, 'The world is ending, chaos ensues.'),
 ('9781524763138', '/public/images/becoming.jpg', 'Becoming', 2018, 'Memoir of Michelle Obama.'),
-('9781524763169', '', 'A Promised Land', 2020, 'Memoir by Barack Obama.'),
-('9780544003415', 'Paperback', 'The Hobbit', 1937, 'A hobbit''s adventure begins.'),
-('9780439023481', 'Paperback', 'The Hunger Games', 2008, 'Children forced to fight in a dystopia.'),
-('9780307743657', 'Paperback', 'The Shining', 1977, 'Haunted hotel thriller.'),
-('9780307588371', 'Paperback', 'Gone Girl', 2012, 'Twisted psychological thriller.'),
-('9781982137274', 'Paperback', 'It Ends With Us', 2016, 'Emotional contemporary romance.'),
-('9780062024039', 'Hardcover', 'Divergent', 2011, 'Dystopian world divided by factions.'),
-('9780553448151', 'Paperback', 'The Martian', 2014, 'Astronaut stranded on Mars.'),
-('9780765376671', 'Hardcover', 'The Rithmatist', 2013, 'Magic and chalk drawings come alive.'),
-('9780618640157', 'Hardcover', 'The Lord of the Rings', 1954, 'Epic quest to destroy a powerful ring.');
+('9781524763169', '/public/images/aPromisedLand.jpg', 'A Promised Land', 2020, 'Memoir by Barack Obama.'),
+('9780544003415', '/public/images/hobbit.jpg', 'The Hobbit', 1937, 'A hobbit''s adventure begins.'),
+('9780439023481', '/public/images/hungerGames.jpg', 'The Hunger Games', 2008, 'Children forced to fight in a dystopia.'),
+('9780307743657', '/public/images/shining.jpg', 'The Shining', 1977, 'Haunted hotel thriller.'),
+('9780307588371', '/public/images/goneGirl.jpg', 'Gone Girl', 2012, 'Twisted psychological thriller.'),
+('9781982137274', '/public/images/itEndsWithUs.jpg', 'It Ends With Us', 2016, 'Emotional contemporary romance.'),
+('9780062024039', '/public/images/divergent.jpg', 'Divergent', 2011, 'Dystopian world divided by factions.'),
+('9780553448151', '/public/images/martian.jpg', 'The Martian', 2014, 'Astronaut stranded on Mars.'),
+('9780765376671', '/public/images/rithmatist.jpg', 'The Rithmatist', 2013, 'Magic and chalk drawings come alive.'),
+('9780618640157', '/public/images/lord.jpg', 'The Lord of the Rings', 1954, 'Epic quest to destroy a powerful ring.');
 
 -- BELONGS
 INSERT INTO "belongs" ("isbn_id", "gender_id")
