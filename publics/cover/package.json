@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "cwebp": "^3.2.0",
+    "webp-converter": "^2.3.3"
+  },
+  "type": "module"
+}
