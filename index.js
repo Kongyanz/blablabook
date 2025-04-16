@@ -5,7 +5,7 @@ import 'dotenv/config';
 import express from 'express';
 
 // Import local modules
-import{ router}from './router.js';
+import { router } from './router.js';
 
 // Create Express app
 const app = express();
