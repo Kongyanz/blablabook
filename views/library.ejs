@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlablaBook</title>
+  <title>BlablaBooK</title>
   <link rel="stylesheet" href="/publics/style.css">
 </head>
 
@@ -27,44 +27,20 @@
       <a href="/" class="nav-link" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a>
       <a href="/" class="nav-link" aria-label="Consultez votre profil utilisateur">Utilisateur</a>
     </div>
-
   </header>
-
-  <section class="welcome-section">
-    <h2>Bienvenue sur BlablaBook</h2>
-    <div class="welcome-content">
-      <p>
-        Votre plateforme de partage de livres et d'échanges littéraires.
-        Découvrez une communauté passionnée par la lecture, partagez vos <strong>livres</strong> préférés,
-        et explorez des recommandations personnalisées pour enrichir votre bibliothèque. Lire, Partager, Connecter!
-      </p>
-      <p class="highlight">Lire, Partager, Connecter</p>
+  <main>
+    <h2>TOUS LES LIVRES</h2>
+    <div class="library">
+      <div class="book">IMG LIVRE 1</div>
+      <div class="book">IMG LIVRE 2</div>
+      <div class="book">IMG LIVRE 3</div>
+      <div class="book">IMG LIVRE 4</div>
+      <div class="book">IMG LIVRE 5</div>
+      <div class="book">IMG LIVRE 6</div>
+      <div class="book">IMG LIVRE 7</div>
+      <div class="book">IMG LIVRE 8</div>
     </div>
-  </section>
-  <!-- section livres -->
-  <section class="books-section">
-    <h2>Découvrez nos livres</h2>
-    <div class="books-container">
-      <% books.forEach(book=> { %>
-        <div class="book-card">
-          <img src="/images/<%= book.img %>" alt="<%= book.title %>">
-          <h3>
-            <%= book.title %>
-          </h3>
-          <p>
-            <%= book.genre %> • <%= book.year %>
-          </p>
-        </div>
-        <% }); %>
-    </div>
-     <!-- Add the image below the books section -->
-  <div class="books-image">
-    <img src="/images/bookshelf.jpg" alt="Bookshelf" />
-  </div>
-</section>
-  
   </main>
-
   <footer class="footer">
     <p>&copy; 2025 Prototype réalisé par Heba Gloria Farida</p>
   </footer>
