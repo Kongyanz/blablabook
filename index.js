@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 
 // Configure assets routes (static folder)
-app.use(express.static("./public"));
+app.use(express.static("public"));
 
 // Favicon static route
 app.use("/favicon.ico", express.static("./public/images/logo.svg"));
