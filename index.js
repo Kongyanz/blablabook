@@ -10,7 +10,7 @@ import { router } from './router.js';
 // Create Express app
 const app = express();
 
-// Configure view engine
+// Configure view engine to use template ejs
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
