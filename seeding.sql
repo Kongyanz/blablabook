@@ -44,22 +44,22 @@ VALUES
 -- BOOKS
 INSERT INTO "book" ("id", "cover", "title", "year", "description") 
 VALUES
-('9780747532743', '/public/images/harryPotter.jpg', 'Harry Potter and the Philosopher''s Stone', 1997, 'A young wizard begins his journey.'),
-('9780451524935', '/public/images/1984.jpg', '1984', 1949, 'Dystopian future under surveillance.'),
-('9780062073488', '/public/images/andThenThereWereNone.jpg', 'And Then There Were None', 1939, 'Ten strangers on an island with a killer.'),
-('9780385504201', '/public/images/davinciCode.jpg', 'The Da Vinci Code', 2003, 'Secrets hidden in art history.'),
-('9780060853983', '/public/images/goodOmens.jpg', 'Good Omens', 1990, 'The world is ending, chaos ensues.'),
-('9781524763138', '/public/images/becoming.jpg', 'Becoming', 2018, 'Memoir of Michelle Obama.'),
-('9781524763169', '/public/images/aPromisedLand.jpg', 'A Promised Land', 2020, 'Memoir by Barack Obama.'),
-('9780544003415', '/public/images/hobbit.jpg', 'The Hobbit', 1937, 'A hobbit''s adventure begins.'),
-('9780439023481', '/public/images/hungerGames.jpg', 'The Hunger Games', 2008, 'Children forced to fight in a dystopia.'),
-('9780307743657', '/public/images/shining.jpg', 'The Shining', 1977, 'Haunted hotel thriller.'),
-('9780307588371', '/public/images/goneGirl.jpg', 'Gone Girl', 2012, 'Twisted psychological thriller.'),
-('9781982137274', '/public/images/itEndsWithUs.jpg', 'It Ends With Us', 2016, 'Emotional contemporary romance.'),
-('9780062024039', '/public/images/divergent.jpg', 'Divergent', 2011, 'Dystopian world divided by factions.'),
-('9780553448151', '/public/images/martian.jpg', 'The Martian', 2014, 'Astronaut stranded on Mars.'),
-('9780765376671', '/public/images/rithmatist.jpg', 'The Rithmatist', 2013, 'Magic and chalk drawings come alive.'),
-('9780618640157', '/public/images/lord.jpg', 'The Lord of the Rings', 1954, 'Epic quest to destroy a powerful ring.');
+('9780747532743', '/public/images/harryPotter.webp', 'Harry Potter and the Philosopher''s Stone', 1997, 'A young wizard begins his journey.'),
+('9780451524935', '/public/images/1984.webp', '1984', 1949, 'Dystopian future under surveillance.'),
+('9780062073488', '/public/images/andThenThereWereNone.webp', 'And Then There Were None', 1939, 'Ten strangers on an island with a killer.'),
+('9780385504201', '/public/images/davinciCode.webp', 'The Da Vinci Code', 2003, 'Secrets hidden in art history.'),
+('9780060853983', '/public/images/goodOmens.webp', 'Good Omens', 1990, 'The world is ending, chaos ensues.'),
+('9781524763138', '/public/images/becoming.webp', 'Becoming', 2018, 'Memoir of Michelle Obama.'),
+('9781524763169', '/public/images/aPromisedLand.webp', 'A Promised Land', 2020, 'Memoir by Barack Obama.'),
+('9780544003415', '/public/images/hobbit.webp', 'The Hobbit', 1937, 'A hobbit''s adventure begins.'),
+('9780439023481', '/public/images/hungerGames.webp', 'The Hunger Games', 2008, 'Children forced to fight in a dystopia.'),
+('9780307743657', '/public/images/shining.webp', 'The Shining', 1977, 'Haunted hotel thriller.'),
+('9780307588371', '/public/images/goneGirl.webp', 'Gone Girl', 2012, 'Twisted psychological thriller.'),
+('9781982137274', '/public/images/itEndsWithUs.webp', 'It Ends With Us', 2016, 'Emotional contemporary romance.'),
+('9780062024039', '/public/images/divergent.webp', 'Divergent', 2011, 'Dystopian world divided by factions.'),
+('9780553448151', '/public/images/martian.webp', 'The Martian', 2014, 'Astronaut stranded on Mars.'),
+('9780765376671', '/public/images/rithmatist.webp', 'The Rithmatist', 2013, 'Magic and chalk drawings come alive.'),
+('9780618640157', '/public/images/lord.webp', 'The Lord of the Rings', 1954, 'Epic quest to destroy a powerful ring.');
 
 -- BELONGS
 INSERT INTO "belongs" ("isbn_id", "gender_id")
