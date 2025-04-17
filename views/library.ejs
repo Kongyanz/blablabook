@@ -4,40 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlablaBook - Accueil</title>
+  <title>BlablaBooK</title>
   <link rel="stylesheet" href="/public/style.css">
 </head>
 
 <body>
   <header class="header">
     <h1>BLABLABOOK</h1>
-    <!--barrede recherche au centre du header -->
-    <div class="search-bar">
-      <form action="/search" method="GET">
-        <input type="text" name="query" placeholder="Rechercher..." aria-label="Champ de recherche">
-        <button aria-label="lancer la recherche">&#128269;</button>
+    <!--barre de recherche au centre du header -->
+    <!--<form action="/search" method="GET">  -->
+
+    <div class="nav-search">
+      <form action="#" method="GET">
+        <input type="text" name="query" placeholder="Rechercher un livre" aria-label="Champ de recherche">
+        <button type="submit" aria-label="lancer la recherche">🔍</button>
       </form>
     </div>
     <!-- section bouton -->
-    <section class="button-bar">
-      <button aria-label="Retour à la page d'accueil">Accueil</button>
-      <button aria-label="Explorer la bibliothèque numérique">Bibliothèque</button>
-      <button aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</button>
-      <button aria-label="Consultez votre profil utilisateur">Utilisateur</button>
-    </section>
-    <main>
-      <h2>TOUS LES LIVRES</h2>
-      <div class="library">
-        <div class="book">IMG LIVRE 1</div>
-        <div class="book">IMG LIVRE 2</div>
-        <div class="book">IMG LIVRE 3</div>
-        <div class="book">IMG LIVRE 4</div>
-        <div class="book">IMG LIVRE 5</div>
-        <div class="book">IMG LIVRE 6</div>
-        <div class="book">IMG LIVRE 7</div>
-        <div class="book">IMG LIVRE 8</div>
-      </div>
-    </main>
-    <footer class="footer">
-      <p>&copy; 2025 Prototype réalisé par Heba Gloria Farida</p>
-    </footer>
+    <div class="nav-buttons">
+      <a href="/" class="nav-link" aria-label="Retour à la page d'accueil">Accueil</a>
+      <a href="/" class="nav-link" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a>
+      <a href="/" class="nav-link" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a>
+      <a href="/" class="nav-link" aria-label="Consultez votre profil utilisateur">Utilisateur</a>
+    </div>
+  </header>
+  <main>
+    <h2>TOUS LES LIVRES</h2>
+    <div class="library">
+      <div class="book">IMG LIVRE 1</div>
+      <div class="book">IMG LIVRE 2</div>
+      <div class="book">IMG LIVRE 3</div>
+      <div class="book">IMG LIVRE 4</div>
+      <div class="book">IMG LIVRE 5</div>
+      <div class="book">IMG LIVRE 6</div>
+      <div class="book">IMG LIVRE 7</div>
+      <div class="book">IMG LIVRE 8</div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Prototype réalisé par Heba Gloria Farida</p>
+  </footer>
+</body>
+
+</html>

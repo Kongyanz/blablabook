@@ -12,88 +12,193 @@ body {
   background-color: var(--light-cream);
   color: var(--dark-blue);
   font-family: 'Roboto', sans-serif;
+  padding: 30px;
   margin: 0;
+
 }
 
 /* Header */
 .header {
-  background-color: var(--dark-blue);
-  color: var(--light-cream);
-  padding: 40px;
-  text-align: center;
-}
-
-.nav-bar {
-  list-style-type: none;
-  padding: 0;
-  margin: 10px 0;
   display: flex;
-  justify-content: center;
-}
-
-.nav-bar li {
-  margin:  15px;
-}
-
-.nav-bar a {
-  text-decoration: none;
-  color: var(--light-cream);
-  font-family: 'Merriweather', serif;
-}
-
-.search-bar {
-  margin: 20px auto;
-  max-width: 300px;
-  display: flex;
+  /* Enables Flexbox for horizontal alignment */
+  justify-content: space-between;
+  /* Distributes space between child elements */
   align-items: center;
+  /* Vertically aligns items in the center */
+  padding: 40px 90px;
+  /* Adds padding around the header */
+  padding-bottom: 100px;
+  /* Reduces space below the header */
+  background-color: var(--dark-blue);
+  /* Example background color */
+  color: var(--light-cream);
+  /* Example text color */
+}
+
+/* Title (BLABLABOOK) */
+.header h1 {
+  margin: 0;
+  /* Removes default margin */
+  font-size: 1rem;
+  /* Adjust font size */
+  font-weight: bold;
+}
+
+/* Nav Search*/
+.nav-search {
+  display: flex;
+  /* Enables Flexbox for the search bar */
+  align-items: center;
+  /* Vertically aligns input and button */
   border-radius: 30px;
   background-color: var(--pale-gold);
-  padding: 5px 10px;
+  padding: 3px 10px;
+  margin: 0 10px;
+  /* Adds spacing between the title and the navigation bar */
+  flex-grow: 1;
+  /* Allows the search bar to grow and take available space */
+  max-width: 400px;
+  /* Optional: Limits the maximum width */
+  margin: 5 10px;
+  /* Adds spacing between the title and the navigation bar */
 }
 
-.search-bar input {
+/* Input Field in Search Bar */
+.nav-search input {
   border: none;
   flex: 1;
-  padding: 5px;
+  /* Makes the input field take up available space */
+  padding: 3px;
+  /* Adds padding inside the input field */
   border-radius: 20px;
   font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  /* Adjust font size */
 }
 
-/* Barre de boutons en haut a droite */
-.button-bar {
-  position: fixed; /* Pour rester aligné sur la droite */
-  top: 50px; /* Distance par rapport au haut */
-  right: 10px; /* Distance par rapport au côté droit */
-  display: flex;
-  flex-direction: row; /* Disposition horizontale */
-  gap: 15px; /* Espacement entre les boutons */
-}
-
-
-button {
-  background-color: var(--pale-gold); /* Couleur pale gold */
+/* Search Button */
+.nav-search button {
+  padding: 8px 8px;
+  /* Adds padding inside the button */
+  background-color: var(--light-cream);
+  color: var(--light-cream);
   border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  color: var(--dark-blue); /* Bleu foncé */
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 20px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: var(--sand); /* Couleur sand plus clair */
+/* Navigation Bar (Links on the Right) */
+.nav-buttons {
+  display: inline-block;
+  /* Aligns navigation links horizontally */
+  gap: 20px;
+  /* Adds spacing between links */
 }
 
-button:focus {
-  outline: 2px solid var(--dark-blue);
+.nav-buttons a {
+  text-decoration: none;
+  /* Removes underline from links */
+  background-color: var(--pale-gold);
+  /* Matches the button background color */
+  color: var(--dark-blue);
+  /* Matches the text color */
+  font-weight: bold;
+  /* Makes the text bold */
+  font-size: 0.9rem;
+  /* Adjust font size */
+  padding: 10px 10px;
+  /* Adds padding inside the links */
+  border-radius: 20px;
+  /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow */
+  cursor: pointer;
+  /* Changes cursor to pointer on hover */
 }
 
-.button-container p {
-  margin-top: 5px;
-  font-size: 14px;
-  color: var(--charcoal); /* Charcoal */
-  font-family: 'Roboto', sans-serif;
+.nav-buttons a:hover {
+  background-color: var(--dark-blue);
+  /* Changes background color on hover */
+  color: var(--light-cream);
+  /* Changes text color on hover */
+}
+
+/* Welcome Section */
+.welcome-section {
+  text-align: center;
+  /* Centers the heading and content */
+  margin-top: px;
+  /* Adds spacing above and below the section */
+  padding: 20px;
+  /* Adds padding inside the section */
+}
+
+.welcome-section h2 {
+  font-size: 3rem;
+  /* Sets the font size for the heading */
+  color: var(--dark-blue);
+  /* Sets the text color */
+  margin-bottom: 30px;
+  /* Adds spacing below the heading */
+}
+
+.welcome-content {
+  max-width: 800px;
+  /* Limits the width of the paragraph */
+  margin: 0 auto;
+  /* Centers the paragraph horizontally */
+  padding: 20px;
+  /* Adds padding inside the content box */
+  border: 2px solid var(--dark-blue);
+  /* Adds a border around the content */
+  border-radius: 10px;
+  /* Rounds the corners of the content box */
+  background-color: var(--light-cream);
+  /* Sets the background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow for a 3D effect */
+}
+
+.welcome-content p {
+  font-size: 1rem;
+  /* Sets the font size for the paragraph */
+  line-height: 1.6;
+  /* Improves readability by increasing line spacing */
+  color: var(--dark-blue);
+  /* Sets the text color */
+}
+
+/* Welcome Section Highlight */
+.welcome-content .highlight {
+  font-size: 1.5rem;
+  /* Makes the text larger */
+  font-weight: bold;
+  /* Makes the text bold */
+  color: var(--dark-blue);
+  /* Sets the text color */
+  margin-top: 20px;
+  /* Adds spacing above the text */
+  text-align: center;
+  /* Centers the text */
+}
+
+/* Books Section Image */
+.books-image {
+  text-align: center;
+  /* Centers the image horizontally */
+  margin-top: 20px;
+  /* Adds spacing above the image */
+}
+
+.books-image img {
+  max-width: 600%;
+  /* Ensures the image is responsive */
+  height: 200px;
+  /* Maintains the aspect ratio of the image */
+  border-radius: 10px;
+  /* Optional: Adds rounded corners to the image */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Optional: Adds a subtle shadow for a 3D effect */
 }
 
 /* Main Content */
@@ -130,71 +235,143 @@ button:focus {
   color: var(--charcoal);
 }
 
-.button-bar {
-  position: absolute; /* Positionnement par rapport au parent ou au body */
-  top: 10px; /* Distance par rapport au haut de la page */
-  right: 10px; /* Distance par rapport au côté droit */
-  display: flex;
-  flex-direction: row; /* Disposition en ligne horizontale */
-  gap: 15px; /* Espacement entre les boutons */
-}
-
-button {
-  background-color: var(--pale-gold); /* Couleur pale gold */
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  color: var(--dark-blue); /* Bleu foncé */
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--sand); /* Couleur sand plus clair */
-}
-
-button:focus {
-  outline: 2px solid var(--dark-blue);
-}
-
 /* User Page */
 .book-section {
   padding: 40px 60px;
 }
+
 h2 {
   margin-bottom: 20px;
 }
+
 .book-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
+
 .book {
   width: 180px;
   text-align: center;
 }
+
 .book img {
   width: 100%;
   height: 200px;
   background-color: #ddd;
 }
+
+/*Connection Page */
+/* Main Content Section */
+.connection-form {
+  max-width: 600px;
+  /* Limits the width of the form */
+  margin: 50px auto;
+  /* Centers the form horizontally and adds vertical spacing */
+  padding: 20px;
+  /* Adds padding inside the form container */
+  border: 2px solid var(--dark-blue);
+  /* Adds a solid border around the form */
+  border-radius: 10px;
+  /* Rounds the corners of the form container */
+  background-color: var(--light-cream);
+  /* Sets the background color of the form */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow for a 3D effect */
+}
+
+.connection-form form {
+  display: flex;
+  /* Enables Flexbox for the form layout */
+  flex-direction: column;
+  /* Stacks form elements vertically */
+  gap: 15px;
+  /* Adds spacing between form elements */
+}
+
+.connection-form label {
+  font-weight: bold;
+  /* Makes the label text bold */
+  margin-bottom: 5px;
+  /* Adds spacing below the label */
+}
+
+.connection-form input {
+  padding: 10px;
+  /* Adds padding inside the input fields */
+  border: 1px solid #ccc;
+  /* Adds a light border around the input fields */
+  border-radius: 5px;
+  /* Rounds the corners of the input fields */
+  font-size: 1rem;
+  /* Sets the font size of the input text */
+}
+
+/* Buttons Section */
+.form-buttons {
+  display: flex;
+  /* Enables Flexbox for the buttons layout */
+  justify-content: space-between;
+  /* Distributes buttons evenly */
+  margin-top: 20px;
+  /* Adds spacing above the buttons */
+}
+
+.btn {
+  padding: 10px 20px;
+  /* Adds padding inside the buttons */
+  border: none;
+  /* Removes the default border */
+  border-radius: 5px;
+  /* Rounds the corners of the buttons */
+  background-color: var(--dark-blue);
+  /* Sets the background color of the buttons */
+  color: var(--light-cream);
+  /* Sets the text color of the buttons */
+  cursor: pointer;
+  /* Changes the cursor to a pointer on hover */
+  font-size: 1rem;
+  /* Sets the font size of the button text */
+}
+
+.btn:hover {
+  background-color: var(--charcoal);
+  /* Changes the background color on hover */
+}
+
+.btn.danger {
+  background-color: var(--dark-blue);
+  /* Sets the background color for the danger button */
+  color: var(--light-cream);
+  /* Sets the text color for the danger button */
+}
+
+.btn.danger:hover {
+  background-color: darkred;
+  /* Changes the background color of the danger button on hover */
+}
+
 /* Book-detailes Page */
 .book-details {
   display: flex;
   gap: 20px;
 }
+
 .book-details img {
   width: 150px;
   height: 200px;
   object-fit: cover;
   background-color: lightgray;
 }
+
 .book-info {
   max-width: 600px;
 }
+
 .book-info h2 {
   margin-top: 0;
 }
+
 .action-buttons button {
   margin: 10px 5px;
   padding: 10px;
@@ -204,45 +381,96 @@ h2 {
   color: white;
   cursor: pointer;
 }
+
 /*Library Page */
 .library {
-   display: grid; /* Creates a grid layout for the library section */
-   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Automatically adjusts columns based on available space */
-   gap: 10px; /* Adds spacing between grid items */
-   padding: 115px 0; /* Adds vertical padding to the library section */
+  display: grid;
+  /* Creates a grid layout for the library section */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* Automatically adjusts columns based on available space */
+  gap: 30px;
+  /* Adds spacing between grid items */
+  padding: 150px 0;
+  /* Adds vertical padding to the library section */
 }
+
 .library .book {
-   background-color: #d6c098; /* Light gray background for each book */
-   height: 110px; /* Fixed height for each book item */
-   display: flex; /* Enables flexbox for centering content */
-   justify-content: center; /* Horizontally centers content */
-   align-items: center; /* Vertically centers content */
-   border-radius: 9%; /* Rounds the corners of each book item */
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a 3D effect */
+  background-color: #d6c098;
+  /* Light gray background for each book */
+  height: 110px;
+  /* Fixed height for each book item */
+  display: flex;
+  /* Enables flexbox for centering content */
+  justify-content: center;
+  /* Horizontally centers content */
+  align-items: center;
+  /* Vertically centers content */
+  border-radius: 9%;
+  /* Rounds the corners of each book item */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow for a 3D effect */
 }
+
 /*User Informations Page */
-main {
-  padding: 60px;
+.user-info {
+  display: flex;
+  /* Enables Flexbox for centering the content */
+  flex-direction: column;
+  /* Stacks the content vertically */
+  justify-content: center;
+  /* Centers content vertically */
+  align-items: center;
+  /* Centers content horizontally */
+  width: 400px;
+  /* Sets the width of the square */
+  height: 400px;
+  /* Sets the height of the square */
+  margin: 50px auto;
+  /* Centers the square horizontally and adds vertical spacing */
+  border: 2px solid var(--dark-blue);
+  /* Adds a solid border */
+  border-radius: 10px;
+  /* Optional: Adds rounded corners */
+  background-color: var(--light-cream);
+  /* Optional: Adds a background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Optional: Adds a shadow for a 3D effect */
   text-align: center;
+  /* Centers text inside the square */
 }
-main label {
+
+.user-info h2 {
+  margin-bottom: 20px;
+  /* Adds spacing below the heading */
+  color: var(--dark-blue);
+  /* Matches the text color */
+}
+
+.user-info label {
   display: block;
-  margin: 20px 0;
+  /* Ensures labels are on their own line */
+  margin: 10px 0;
+  /* Adds spacing between labels and inputs */
   font-weight: bold;
+  color: var(--dark-blue);
+  /* Matches the text color */
 }
-main input {
+
+.user-info input {
   padding: 10px;
-  width: 300px;
+  width: 80%;
+  /* Makes the input fields responsive */
   border: 1px solid #ccc;
-  border-radius: 13px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  /* Adds spacing between input fields */
 }
-
-
 
 /* Footer */
 .footer {
-  background-color: var(--sand);
-  color: var(--charcoal);
+  background-color: var(--pale-gold);
+  color: var(--dark-blue);
   padding: 15px;
   text-align: center;
 }

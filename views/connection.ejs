@@ -29,20 +29,35 @@
         </div>
 
     </header>
-
-    <main class="user-info">
-        <h2>Mes Informations</h2>
+    <main class="connection-form">
         <form>
-            <label for="email">Mail</label>
-            <input type="email" id="email" name="email" value="toto@mail.com" readonly>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom">
+
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom">
+
+            <label for="pseudo">Pseudo</label>
+            <input type="text" id="pseudo" name="pseudo" placeholder="Entrez votre pseudo">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email">
 
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" value="blabla" readonly>
-            
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
+
             <label for="confirm-password">Confirmer le mot de passe</label>
-            <input type="password" id="confirm-password" name="confirm-password" value="blabla" readonly>
+            <input type="password" id="confirm-password" name="confirm-password"
+                placeholder="Confirmez votre mot de passe">
+
+            <div class="form-buttons">
+                <button type="submit" class="btn">Se connecter</button>
+                <button type="button" class="btn">Se déconnecter</button>
+                <button type="button" class="btn danger">Supprimer mon compte</button>
+            </div>
         </form>
     </main>
+
     <footer class="footer">
         <p>&copy; 2025 Prototype réalisé par Heba Gloria Farida</p>
     </footer>
