@@ -1,10 +1,9 @@
 {
-  "name": "projet-blablabook-2",
+  "name": "blablabook-2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch index.js",
     "db:reset": "psql -U blablabook -d blablabook -f ./migrations/create-tables.sql"
   },
