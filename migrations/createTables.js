@@ -1,11 +1,5 @@
 import sequelize from '../models/sequelize.js';
-import { 
-  AppUser,
-  Book,
-  Gender,
-  AppUserBook,
-  Author
-} from '../models/association.js';
+import { AppUser, Book, Gender, AppUserBook, Author } from '../models/association.js';
 
 // on supprime toutes les tables dont sequelize a conscience
 await sequelize.drop();
