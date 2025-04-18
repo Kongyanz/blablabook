@@ -50,21 +50,7 @@ AppUserBook.belongsTo(Book, {
     },
 });
 
-// AppUser.belongsToMany(LivreModel, {
-//     as: 'livre',
-//     foreignKey: {
-//         name:'acteur_id',
-//         allowNull: false
-//     }
-// });
-
-// LivreModel.belongsToMany(ActeurModel, {
-//     as: 'acteur',
-//     foreignKey: {
-//         name:'livre_id',
-//         allowNull: false
-//     }
-// });
+ 
 
 Book.belongsTo(Gender, {
     as: 'gender',

@@ -5,14 +5,14 @@ import 'dotenv/config';
 import express from 'express';
 
 // Import local modules
-import { router } from './router.js';
+import { router } from './app/router.js';
 
 // Create Express app
 const app = express();
 
 // Configure view engine to use template ejs
 app.set("view engine", "ejs");
-app.set("views", "./views");
+app.set("views", "./app/views");
 
 // Configure assets routes (static folder)
 app.use(express.static("public"));

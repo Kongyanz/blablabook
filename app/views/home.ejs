@@ -47,12 +47,12 @@
     <div class="books-container">
       <% books.forEach(book=> { %>
         <div class="book-card">
-          <img src="/images/<%= book.img %>" alt="<%= book.title %>">
+          <img src="/images/<%= book.cover %>" alt="<%= book.title %>">
           <h3>
             <%= book.title %>
           </h3>
           <p>
-            <%= book.genre %> • <%= book.year %>
+            <%= book.authors[0].name %> <%= book.authors[0].firstname %> • <%= book.gender.name %> • <%= book.year %> 
           </p>
         </div>
         <% }); %>

@@ -10,7 +10,7 @@ AppUserBook.init({
         autoIncrement: true
     },
     status: {
-        type: DataTypes.STRING, // TODO essayer de faire fonctionner avec le type ENUM
+        type: DataTypes.STRING,
         allowNull: false,
         defaultValue: "to-read"
     },

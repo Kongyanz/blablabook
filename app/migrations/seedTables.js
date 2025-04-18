@@ -1,6 +1,7 @@
 import { AppUser, Author, Gender, Book, AppUserBook}  from '../models/association.js';
 import sequelize from '../models/sequelize.js';
 
+//
 await AppUser.destroy({
     truncate: true,
     cascade: true,
@@ -99,7 +100,7 @@ await Book.findByPk(14).then((book) => book.addAuthors([15]));
 await Book.findByPk(15).then((book) => book.addAuthors([16]));
 await Book.findByPk(16).then((book) => book.addAuthors([9]));
 
-// AppUserBOok
+//
 const appUserBooks = await AppUserBook.bulkCreate([
     { id: 1, app_user_id: 1, book_id: 1, status: 'reading' },
     { id: 2, app_user_id: 1, book_id: 2, status: 'read' },
