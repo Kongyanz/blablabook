@@ -16,10 +16,10 @@ export  const mainController ={
             ]
         });
 
-        console.log(books);
-
         res.render("home", {books});
     }
 };
+
+export default mainController;
 
 

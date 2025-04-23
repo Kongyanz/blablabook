@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlablaBook</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -30,21 +30,39 @@
     </header>
     <main>
         <div class="book-details">
-            <img src="#" alt="IMG BOOK">
+            <div class="book-container">
+                <img src="/images/<%= book.cover %>" alt="Couverture de <%= book.title %>"> class="book-cover">
             <div class="book-info">
-                <h2>Les Misérables</h2>
-                <p><strong>Genre:</strong> Roman</p>
-                <p><strong>Public cible:</strong> Adultes</p>
-                <p><strong>Année de publication:</strong> 1862</p>
-                <p><strong>Description:</strong> Roman littérature française sur des thèmes universels: injustice,
-                    amour, rédemption...</p>
-                <div class="action-buttons">
-                    <button>Lu</button>
-                    <button>À Lire</button>
-                </div>
+                <h2><%= book.title %></h2>
+                <p><strong>Auteur :</strong> 
+                    <% if (book.authors && book.authors.length > 0) { %>
+                        <%= book.authors[0].firstname %> <%= book.authors[0].name %>
+                    <% } else { %>
+                        Auteur inconnu
+                    <% } %>
+                </p>
+                <p><strong>Genre :</strong> 
+                    <% if (book.gender) { %>
+                        <%= book.gender.name %>
+                    <% } else { %>
+                        Genre inconnu
+                    <% } %>
+                </p>
+                <p><strong>Année de publication :</strong> 
+                    <% if (book.description) { %>
+                        <%= book.description %>
+                    <% } else { %>
+                        Pas de description disponible
+                    <% } %>
+                </p>
             </div>
         </div>
-    </main>
+    </div>
+    <div class="action-buttons">
+        <button aria-label="Marquer comme lu">Lu</button>
+        <button aria-label="Ajouter aux livres à lire">À Lire</button>
+        <a href="/" class="back-button" aria-label="Retour à la bibliothèque">Retour</a>
+    </div>
 
     <footer class="footer">
         <p>&copy; 2025 Prototype réalisé par Heba Gloria Farida</p>
