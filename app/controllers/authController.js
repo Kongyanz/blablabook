@@ -5,14 +5,21 @@ import bcrypt from "bcrypt";
 import  { AppUser } from "../models/association.js"; 
 
 
-  const displaySignUpForm = async (req, res, ) => {
+const displaySignUpForm = async (req, res, next ) => {
+   try {
+    res.render("auth/signup")
+   } catch (error) {
+    next(error)
+   };
+}
+
+const displayLoginForm = async (req, res, next ) => {
     try {
-        res.render("auth/signup", { errors: {}, data: {} });
+     res.render("auth/login")
     } catch (error) {
-        console.error("Erreur lors de l'affichage du formulaire :", error);
-        res.status(500).render("auth/signup", { errors: { general: "Erreur interne" }, data: {} });
-    }    
-};        
+     next(error)
+    };
+}
 
  const handleSignUp = async (req, res, ) => {
     try {
@@ -80,7 +87,7 @@ import  { AppUser } from "../models/association.js";
         res.redirect("/");
     } catch (error) {
         console.error("Erreur de connexion :", error);
-        res.status(500).render("auth/login", { errors: { general: "Erreur interne" } });
+        res.status(500).redirect("/inscription-reussie");
     }
 };
 
@@ -94,10 +101,11 @@ import  { AppUser } from "../models/association.js";
         console.error("Erreur de déconnexion :", error);
         res.status(500).redirect("/");
     }
-  };
+};
 
 const authController = {
     displaySignUpForm,
+    displayLoginForm,
     handleSignUp,
     handleLogin,
     logout

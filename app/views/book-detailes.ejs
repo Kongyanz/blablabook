@@ -15,7 +15,7 @@
         <!--<form action="/search" method="GET">  -->
 
         <div class="nav-search">
-            <form action="#" method="GET">
+            <form action="" method="GET">
                 <input type="text" name="query" placeholder="Rechercher un livre" aria-label="Champ de recherche">
                 <button type="submit" aria-label="lancer la recherche">🔍</button>
             </form>
@@ -31,7 +31,7 @@
     <main>
         <div class="book-details">
             <div class="book-container">
-                <img src="/images/<%= book.cover %>" alt="Couverture de <%= book.title %>"> class="book-cover">
+                <img src="/images/<%= book.cover %>" alt="Couverture de <%= book.title %>">
             <div class="book-info">
                 <h2><%= book.title %></h2>
                 <p><strong>Auteur :</strong> 
@@ -41,6 +41,7 @@
                         Auteur inconnu
                     <% } %>
                 </p>
+
                 <p><strong>Genre :</strong> 
                     <% if (book.gender) { %>
                         <%= book.gender.name %>
@@ -48,9 +49,18 @@
                         Genre inconnu
                     <% } %>
                 </p>
-                <p><strong>Année de publication :</strong> 
+
+                <p><strong>Description</strong>    
                     <% if (book.description) { %>
                         <%= book.description %>
+                    <% } else { %>
+                        Genre inconnu
+                    <% } %>
+                </p>
+                   
+                <p><strong>Année de publication :</strong> 
+                    <% if (book.year) { %>
+                        <%= book.year %>
                     <% } else { %>
                         Pas de description disponible
                     <% } %>
