@@ -68,7 +68,6 @@ const displayLoginForm = async (req, res, next ) => {
            
         res.redirect("/inscription-reussie");
     } catch (error) {
-        console.error("Erreur lors de l'inscription :", error);
         res.status(500).render("auth/signup", { errors: { general: "Erreur interne" }, data: req.body });
     }
 };
@@ -82,12 +81,11 @@ const displayLoginForm = async (req, res, next ) => {
         if (!user || !await bcrypt.compare(password, user.password)) {
             return res.status(401).render("auth/login", { errors: { general: "Email ou mot de passe incorrect" } });
         }
-
         req.session.userId = user.id;
         res.redirect("/");
     } catch (error) {
         console.error("Erreur de connexion :", error);
-        res.status(500).redirect("/inscription-reussie");
+        res.status(500).render('errors/500', { error: "Erreur interne" });
     }
 };
 

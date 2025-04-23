@@ -1,82 +1,48 @@
-<!DOCTYPE html>
-<html lang="fr">
+<%- include('partials/header') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlablaBook</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
+<main>
+  <div class="book-details">
+    <div class="book-container">
+      <img
+        src="/images/<%= book.cover %>"
+        alt="Couverture de <%= book.title %>"
+      />
+      <div class="book-info">
+        <h2><%= book.title %></h2>
+        <p>
+          <strong>Auteur :</strong>
+          <% if (book.authors && book.authors.length > 0) { %> <%=
+          book.authors[0].firstname %> <%= book.authors[0].name %> <% } else {
+          %> Auteur inconnu <% } %>
+        </p>
 
-<body>
-    <header class="header">
-        <h1>BLABLABOOK</h1>
-        <!--barre de recherche au centre du header -->
-        <!--<form action="/search" method="GET">  -->
+        <p>
+          <strong>Genre :</strong>
+          <% if (book.gender) { %> <%= book.gender.name %> <% } else { %> Genre
+          inconnu <% } %>
+        </p>
 
-        <div class="nav-search">
-            <form action="" method="GET">
-                <input type="text" name="query" placeholder="Rechercher un livre" aria-label="Champ de recherche">
-                <button type="submit" aria-label="lancer la recherche">🔍</button>
-            </form>
-        </div>
-        <!-- section bouton -->
-        <div class="nav-buttons">
-            <a href="/" class="nav-link" aria-label="Retour à la page d'accueil">Accueil</a>
-            <a href="/" class="nav-link" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a>
-            <a href="/" class="nav-link" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a>
-            <a href="/" class="nav-link" aria-label="Consultez votre profil utilisateur">Utilisateur</a>
-        </div>
-    </header>
-    <main>
-        <div class="book-details">
-            <div class="book-container">
-                <img src="/images/<%= book.cover %>" alt="Couverture de <%= book.title %>">
-            <div class="book-info">
-                <h2><%= book.title %></h2>
-                <p><strong>Auteur :</strong> 
-                    <% if (book.authors && book.authors.length > 0) { %>
-                        <%= book.authors[0].firstname %> <%= book.authors[0].name %>
-                    <% } else { %>
-                        Auteur inconnu
-                    <% } %>
-                </p>
+        <p>
+          <strong>Description</strong>
+          <% if (book.description) { %> <%= book.description %> <% } else { %>
+          Genre inconnu <% } %>
+        </p>
 
-                <p><strong>Genre :</strong> 
-                    <% if (book.gender) { %>
-                        <%= book.gender.name %>
-                    <% } else { %>
-                        Genre inconnu
-                    <% } %>
-                </p>
-
-                <p><strong>Description</strong>    
-                    <% if (book.description) { %>
-                        <%= book.description %>
-                    <% } else { %>
-                        Genre inconnu
-                    <% } %>
-                </p>
-                   
-                <p><strong>Année de publication :</strong> 
-                    <% if (book.year) { %>
-                        <%= book.year %>
-                    <% } else { %>
-                        Pas de description disponible
-                    <% } %>
-                </p>
-            </div>
-        </div>
+        <p>
+          <strong>Année de publication :</strong>
+          <% if (book.year) { %> <%= book.year %> <% } else { %> Pas de
+          description disponible <% } %>
+        </p>
+      </div>
     </div>
-    <div class="action-buttons">
-        <button aria-label="Marquer comme lu">Lu</button>
-        <button aria-label="Ajouter aux livres à lire">À Lire</button>
-        <a href="/" class="back-button" aria-label="Retour à la bibliothèque">Retour</a>
-    </div>
+  </div>
+  <div class="action-buttons">
+    <button aria-label="Marquer comme lu">Lu</button>
+    <button aria-label="Ajouter aux livres à lire">À Lire</button>
+    <a href="/" class="back-button" aria-label="Retour à la bibliothèque"
+      >Retour</a
+    >
+  </div>
+</main>
 
-    <footer class="footer">
-        <p>&copy; 2025 Prototype réalisé par Heba Gloria Farida</p>
-    </footer>
-</body>
-
-</html>
+<%- include('partials/footer') %>

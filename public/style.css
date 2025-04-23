@@ -261,9 +261,9 @@ h2 {
   background-color: #ddd;
 }
 
-/*Connection Page */
+/*Login Page */
 /* Main Content Section */
-.connection-form {
+.login-form {
   max-width: 600px;
   /* Limits the width of the form */
   margin: 50px auto;
@@ -280,7 +280,7 @@ h2 {
   /* Adds a subtle shadow for a 3D effect */
 }
 
-.connection-form form {
+.login-form form {
   display: flex;
   /* Enables Flexbox for the form layout */
   flex-direction: column;
@@ -289,14 +289,14 @@ h2 {
   /* Adds spacing between form elements */
 }
 
-.connection-form label {
+.login-form label {
   font-weight: bold;
   /* Makes the label text bold */
   margin-bottom: 5px;
   /* Adds spacing below the label */
 }
 
-.connection-form input {
+.login-form input {
   padding: 10px;
   /* Adds padding inside the input fields */
   border: 1px solid #ccc;
@@ -315,6 +315,28 @@ h2 {
   /* Distributes buttons evenly */
   margin-top: 20px;
   /* Adds spacing above the buttons */
+}
+
+/* Signup form */
+.register-form form {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.register-form .input-group label {
+  display: block;
+}
+
+.register-form input[type="text"], 
+.register-form input[type="email"],
+.register-form input[type="password"] {
+  display: block;
+  height: 40px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  border: none;
+  width: 100%;
 }
 
 .btn {

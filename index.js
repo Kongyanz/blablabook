@@ -8,6 +8,7 @@ import express from 'express';
 import router from "./app/router.js";
 
 import session from "express-session";
+import { setupSession, initUserLocals } from "./app/middlewares/setupSession.middleware.js";
 
 // Create Express app
 const app = express();
@@ -25,14 +26,11 @@ app.use("/favicon.ico", express.static("./public/images/logo.svg"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(setupSession);
+app.use(initUserLocals);
+
 // Plug routes on app
 app.use(router);
-app.use(session({
-  secret: "supersecretkey", // 🔹 Change cette clé pour plus de sécurité
-  resave: false,
-  saveUninitialized: false,
-  cookie: { secure: false } // 🔹 Si tu es en HTTPS, mets `true`
-}));
 
 // Start server
 const PORT = process.env.PORT || 3000;

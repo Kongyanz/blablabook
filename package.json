@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "node --watch index.js",
-    "db:reset": "psql -U blablabook -d blablabook -f ./migrations/create-tables.sql"
+    "db:create": "node app/migrations/createTables.js",
+    "db:seed": "node app/migrations/seedTables.js"
   },
   "repository": {
     "type": "git",

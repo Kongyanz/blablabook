@@ -9,7 +9,8 @@ const router = Router();
 
 //homepage+books routes
 router.get("/", mainController.renderHomePage);
-router.get("/book/:id", bookController.getBookDetails);
+router.get("/livre/:id", bookController.getBookDetails);
+// TODO : route pour TOUS les livres "/livres"
 
 //authentification routes
 router.post("/creer-un-compte", authController.handleSignUp);
@@ -18,13 +19,13 @@ router.get("/creer-un-compte", authController.displaySignUpForm);
 router.get("/connexion", authController.displayLoginForm);
 router.post("/connexion", authController.handleLogin);
 
- router.get("/inscription-reussie", (req, res) => {
- res.render("auth/inscription-reussie"); });
-
-export default router;
+router.get("/inscription-reussie", (req, res) => {
+ res.render("auth/inscription-reussie"); 
+});
 
 
 //app user :
-router.get("/users/:id", appuserController.getUserById); // Add the route for fetching user info
-router.post("/user/:id/delete", appuserController.remove); // Add the route for deleting a user
+router.get("/mon-compte", appuserController.getAccountPage); // Add the route for fetching user info
+router.post("/users/:id/delete", appuserController.remove); // Add the route for deleting a user
 
+export default router;
