@@ -43,6 +43,11 @@
             <input type="password" id="confirm-password" name="confirm-password" value="********" readonly>
 
         </form>
+          <!-- Delete Account Form -->
+    <form action="/users/<%= user.id %>/delete" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?');">
+        <button type="submit" class="delete-button">Supprimer mon compte</button>
+    </form>
+</main>
     </main>
     <footer class="footer">
         <p>&copy; 2025 Prototype réalisé par Heba Gloria Farida</p>
