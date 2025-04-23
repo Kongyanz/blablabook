@@ -44,3 +44,6 @@ Content-Type: application/json
   "surname" : "Doe",
   "email": ""
 }
+
+### Get a specific user
+GET http://localhost:3000/users/1 HTTP/1.1

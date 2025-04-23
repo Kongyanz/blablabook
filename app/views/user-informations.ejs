@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlablaBook</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -34,13 +34,14 @@
         <h2>Mes Informations</h2>
         <form>
             <label for="email">Mail</label>
-            <input type="email" id="email" name="email" value="toto@mail.com" readonly>
+            <input type="email" id="email" name="email" value="<%= user.email %>" readonly>
 
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" value="blabla" readonly>
-            
+            <input type="password" id="password" name="password" value="********" readonly>
+
             <label for="confirm-password">Confirmer le mot de passe</label>
-            <input type="password" id="confirm-password" name="confirm-password" value="blabla" readonly>
+            <input type="password" id="confirm-password" name="confirm-password" value="********" readonly>
+
         </form>
     </main>
     <footer class="footer">
