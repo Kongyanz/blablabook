@@ -1,8 +1,8 @@
 ### Get the whole books
-GET locahotst:3000/books HTTP 1.1
+GET localhotst:3000/books HTTP 1.1
 
 ###Get a specific book
-GET locahost:3000/book/1 HTTP 1.1
+GET localhost:3000/book/1 HTTP 1.1
 
 ###
 

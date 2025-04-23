@@ -475,3 +475,45 @@ h2 {
   padding: 15px;
   text-align: center;
 }
+/* Pour les écrans de moins de 768px (tablettes et mobiles) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .books-container {
+    grid-template-columns: 1fr; /* Une seule colonne sur petit écran */
+  }
+
+  .user-info {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+}
+
+/* Pour les écrans de moins de 480px (téléphones) */
+@media (max-width: 480px) {
+  .btn {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  .action-buttons button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  footer {
+    text-align: left;
+    padding: 10px;
+  }
+}
