@@ -4,19 +4,19 @@ import { bookController } from "./controllers/bookController.js";
 import  authController  from "./controllers/authController.js"; 
 
 const router = Router();
-// Define the routes
-router.get("/", mainController.renderHomePage);
 
- //inscription
- //Route POST 
+//homepage+books routes
+router.get("/", mainController.renderHomePage);
+router.get("/book/:id", bookController.getBookDetails);
+
+
+//authentification routes
 router.post("/creer-un-compte", authController.handleSignUp);
- //Route GET 
 router.get("/creer-un-compte", authController.displaySignUpForm);
-router.get("/inscription-reussie", (req, res) => {
-    res.render("auth/inscription-reussie");
-});
- 
- router.get("/book/:id", bookController.getBookDetails);
+// router.get("/inscription-reussie", (req, res) => {
+    // res.render("auth/inscription-reussie");
+// });
+
 
 
 
