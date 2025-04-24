@@ -12,7 +12,6 @@ const displaySignUpForm = async (req, res, next ) => {
     next(error)
    };
 }
-
 const displayLoginForm = async (req, res, next ) => {
     try {
      res.render("auth/login")
@@ -20,7 +19,13 @@ const displayLoginForm = async (req, res, next ) => {
      next(error)
     };
 }
-
+const displayLogoutForm = async (req, res, next ) => {
+    try {
+     res.render("auth/logout")
+    } catch (error) {
+     next(error)
+    };
+};
  const handleSignUp = async (req, res, ) => {
     try {
         const { firstname, lastname, email, password, confirmation } = req.body;
@@ -71,9 +76,7 @@ const displayLoginForm = async (req, res, next ) => {
         res.status(500).render("auth/signup", { errors: { general: "Erreur interne" }, data: req.body });
     }
 };
-
-// ✅ Gérer la connexion
- const handleLogin = async (req, res) => {
+const handleLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await AppUser.findOne({ where: { email } });
@@ -88,25 +91,28 @@ const displayLoginForm = async (req, res, next ) => {
         res.status(500).render('errors/500', { error: "Erreur interne" });
     }
 };
-
-// ✅ Gérer la déconnexion
-  const logout = async (req, res) => {
+const handleLogout = async (req, res) => {
     try {
-        req.session.destroy();
-        res.clearCookie("connect.sid");
-        res.redirect("/");
+         await req.session.destroy((err) => {
+            if (err) {
+                console.error("Erreur lors de la destruction de la session :", err);
+                return res.status(500).send("Erreur lors de la déconnexion.");
+            }
+            res.clearCookie("connect.sid");
+            res.redirect("/home");
+        });        
     } catch (error) {
         console.error("Erreur de déconnexion :", error);
-        res.status(500).redirect("/");
+        res.status(500).redirect("/home");
     }
 };
-
 const authController = {
     displaySignUpForm,
     displayLoginForm,
+    displayLogoutForm,
     handleSignUp,
     handleLogin,
-    logout
+    handleLogout
 };
 
 export default authController;

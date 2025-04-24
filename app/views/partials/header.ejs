@@ -32,6 +32,7 @@
       <% if (typeof user !== 'undefined' && user) { %>
         <span>Hello <%= user.firstname %> ⛷️</span>
         <a href="/mon-compte" class="nav-link" aria-label="Consultez votre profil utilisateur">Mon Compte</a>
+        <a href="/deconnexion" class="nav-link" aria-label="Déconnexion de votre compte utilisateur">Déconnexion</a>
       <% } else  { %>
         <a href="/creer-un-compte" class="nav-link" aria-label="Créer un compte utilisateur">Inscription</a>
         <a href="/connexion" class="nav-link" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a>

@@ -46,4 +46,4 @@ Content-Type: application/json
 }
 
 ### Get a specific user
-GET http://localhost:3000/users/1 HTTP/1.1
+POST http://localhost:3000/deconnexion HTTP/1.1
