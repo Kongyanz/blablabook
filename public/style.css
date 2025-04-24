@@ -403,63 +403,78 @@ h2 {
   color: white;
   cursor: pointer;
 }
- 
-/*Library Page */
-.library {
-  display: grid;
-  /* Creates a grid layout for the library section */
-  grid-template-columns: repeat(4, 1fr);
-  /* Automatically adjusts columns based on available space */
-  gap: 20px;
-  }
+/* Book-detailes Page */
+ .book-details { 
+  display: flex; 
+  gap: 20px; 
+} 
 
-.library .book {
-  background-color: (--sand);
-  padding: 15px; /* Espace intérieur */
-   text-align: center;
-  /* Light gray background for each book */
-  height: 90px;
-  /* Fixed height for each book item */
-  display: flex;
-  /* Enables flexbox for centering content */
-  justify-content: center;
-  /* Horizontally centers content */
-  align-items: center;
-  /* Vertically centers content */
-  border-radius:5px;
-  /* Rounds the corners of each book item */
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 50px;
-  border-radius: 3px;
-}
-
-/*User Informations Page */
-.user-info {
-  display: flex;
-  /* Enables Flexbox for centering the content */
-  flex-direction: column;
-  /* Stacks the content vertically */
-  justify-content: center;
-  /* Centers content vertically */
-  align-items: center;
-  /* Centers content horizontally */
-  width: 400px;
-  /* Sets the width of the square */
-  height: 400px;
-  /* Sets the height of the square */
-  margin: 50px auto;
-  /* Centers the square horizontally and adds vertical spacing */
-  border: 2px solid var(--dark-blue);
-  /* Adds a solid border */
-  border-radius: 10px;
-  /* Optional: Adds rounded corners */
-  background-color: var(--light-cream);
-  /* Optional: Adds a background color */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Optional: Adds a shadow for a 3D effect */
-  text-align: center;
-  /* Centers text inside the square */
+.book-details img { 
+  width: 150px; 
+  height: 200px; 
+  object-fit: cover; 
+  background-color: lightgray; 
+} 
+.book-info { 
+  max-width: 600px;
+ } 
+ .book-info h2 { 
+  margin-top: 0;
+ } 
+ .action-buttons button { 
+  margin: 10px 5px; 
+  padding: 10px;
+   border: none; 
+   border-radius: 45px; 
+   background-color: #555; 
+   color: white; 
+   cursor: pointer; 
+  } 
+  /*Library Page */ 
+  .library { 
+    display: grid; 
+  /* Creates a grid layout for the library section */ 
+  grid-template-columns: repeat(4, 1fr); 
+  /* Automatically adjusts columns based on available space */ 
+  gap: 20px; 
+} 
+/* Library Section */ 
+.library { 
+  display: grid; 
+  /* Crée une disposition en grille */ 
+  grid-template-columns: repeat(3, 1fr); 
+  /* Définit 3 colonnes égales */ 
+  gap: 20px; 
+  /* Ajoute un espacement entre les livres */ 
+  padding: 30px; /* Ajoute de l'espace autour de la bibliothèque */ 
+  justify-content: center; 
+  /* Centre les éléments horizontalement */ 
+} 
+/* Book Items */ 
+.library.book { 
+  background-color: var(--sand); 
+  /* Utilise la couleur définie dans ta palette */ 
+  padding: 15px; /* Ajoute de l'espace intérieur */ 
+  text-align: center; /* Centre le contenu texte */ 
+  border-radius: 10px; 
+  /* Coins arrondis */ 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+  /* Ajoute une ombre subtile */ 
+  display: flex; 
+  /* Utilise Flexbox pour centrer le contenu dans chaque livre */ 
+  justify-content: center; 
+  /* Centre horizontalement le contenu */ 
+  align-items: center; 
+  /* Centre verticalement le contenu */ 
+  height: 200px;  
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; padding: 30px; 
+  justify-content: center; 
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 5px; 
+  margin-bottom: 10px;
 }
 
 .user-info h2 {
@@ -502,7 +517,6 @@ h2 {
 .delete-button:hover {
   background-color: #e60000;
 }
-
 
 /* Footer */
 .footer {
