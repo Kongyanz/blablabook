@@ -37,8 +37,17 @@
     </div>
   </div>
   <div class="action-buttons">
-    <button aria-label="Marquer comme lu">Lu</button>
-    <button aria-label="Ajouter aux livres à lire">À Lire</button>
+    <!-- Form to mark the book as read -->
+    <form action="/livres/<%= book.id %>/mark-read" method="POST">
+      <button type="submit" aria-label="Marquer comme lu">Lu</button>
+    </form>
+    <!-- Form to add the book to "To Read" -->
+    <form action="/livres/<%= book.id %>/add-to-read" method="POST">
+      <button type="submit" aria-label="Ajouter aux livres à lire">
+        À Lire
+      </button>
+    </form>
+
     <a href="/" class="back-button" aria-label="Retour à la bibliothèque"
       >Retour</a
     >

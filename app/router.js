@@ -31,4 +31,9 @@ router.get("/inscription-reussie", (req, res) => {
 router.get("/mon-compte", appuserController.getAccountPage); // Add the route for fetching user info
 router.post("/users/:id/delete", appuserController.remove); // Add the route for deleting a user
 
+router.get("/user-library", appuserController.getUserLibrary); // Route to display the user's library
+
+router.post("/livres/:id/mark-read", appuserController.markBookAsRead);
+router.post("/livres/:id/add-to-read", appuserController.addBookToRead);
+
 export default router;
