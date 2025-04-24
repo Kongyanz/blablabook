@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { mainController} from "./controllers/mainController.js" // import mainController from "./controller/mainController.js"
- 
 import { appuserController } from "./controllers/appuserController.js"; // import appuserController from "./controller/appuserController.js"
 import { bookController } from "./controllers/bookController.js";
 import  authController  from "./controllers/authController.js"; 
@@ -11,6 +10,7 @@ const router = Router();
 router.get("/", mainController.renderHomePage);
 router.get("/livre/:id", bookController.getBookDetails);
 // TODO : route pour TOUS les livres "/livres"
+router.get("/livres", bookController.getAllBooks);
 
 //authentification routes
 router.post("/creer-un-compte", authController.handleSignUp);
