@@ -1,8 +1,6 @@
 <%- include('partials/header') %>
-
-<main>
-  <h2>TOUS LES LIVRES</h2>
-  <div class="library">
+  <!--
+<div class="library">
     <div class="book">IMG LIVRE 1</div>
     <div class="book">IMG LIVRE 2</div>
     <div class="book">IMG LIVRE 3</div>
@@ -11,7 +9,21 @@
     <div class="book">IMG LIVRE 6</div>
     <div class="book">IMG LIVRE 7</div>
     <div class="book">IMG LIVRE 8</div>
+  </div>-->
+  <main>
+    <h1>Bibliothèque</h1>
+    <h2>Liste des Livres Disponibles</h2>
+  <div class="library">
+    <% books.forEach(book => { %>
+      <div class="book">
+        <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
+        <h3><%= book.title %></h3>
+        <p>author(s) : <%= book.authors.map(author => author.name).join(", ") %></p>
+        <p>gender : <%= book.gender.name %></p>
+        <% console.log(books); %>
+      </div>
+    <% }) %>
   </div>
-</main>
+  </main>
 
 <%- include('partials/footer') %>
