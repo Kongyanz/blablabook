@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { mainController} from "./controllers/mainController.js" // import mainController from "./controller/mainController.js"
- import { appuserController } from "./controllers/appuserController.js"; // import appuserController from "./controller/appuserController.js"
+import { mainController } from "./controllers/mainController.js"; // import mainController from "./controller/mainController.js"
+import { appuserController } from "./controllers/appuserController.js"; // import appuserController from "./controller/appuserController.js"
 import { bookController } from "./controllers/bookController.js";
-import  authController  from "./controllers/authController.js"; 
+import authController from "./controllers/authController.js";
 import { searchBooks } from "./controllers/searchController.js";
 
 const router = Router();
@@ -23,14 +23,14 @@ router.get("/connexion", authController.displayLoginForm);
 router.post("/connexion", authController.handleLogin);
 
 router.get("/inscription-reussie", (req, res) => {
- res.render("auth/inscription-reussie"); 
+  res.render("auth/inscription-reussie");
 });
 
 //app user
 router.get("/mon-compte", appuserController.getAccountPage); // Add the route for fetching user info
 router.post("/users/:id/delete", appuserController.remove); // Add the route for deleting a user
 
-router.get("/user-library", appuserController.getUserLibrary); // Route to display the user's library
+router.get("/ma-bibliotheque", appuserController.getUserLibrary); // Route to display the user's library
 
 router.post("/livres/:id/mark-read", appuserController.markBookAsRead);
 router.post("/livres/:id/add-to-read", appuserController.addBookToRead);
