@@ -1,8 +1,8 @@
 <%- include('partials/header') %>
 
 <div class="books-container">
-  <% if (books.length === 0 || !books ) { %>
-    <p>Aucun livre trouvé pour votre recherche. Veuillez écrire</p>
+  <% if (books.length === 0) { %>
+    <p>Aucun livre trouvé pour votre recherche. Veuillez écrire un livre correspondant ou ne pas laisser le champs vide.</p>
   <% } else { %>
     <% books.forEach(book => { %>
       <div class="book-card">

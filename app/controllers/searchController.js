@@ -3,31 +3,29 @@ import sequelize from "../models/sequelize.js";
 export const searchBooks = {
     async search(req, res) {
         try {
-            // Récupérer la recherche
+            // fetch the search term from the query string
             const { livre } = req.query;
-
-
-            // Validation stricte de la requête
+            // request validation
             if (!livre || typeof livre !== 'string' || livre.trim() === '') {
                 console.error("Termes de recherche invalides :", livre);
                 return res.status(400).render("search", { books: [], message: "Veuillez fournir un terme de recherche valide." });
             }
-
-            // Requête SQL sécurisée avec Sequelize
+            // Sanitize the search term
             const books = await sequelize.query(
-                "SELECT * FROM books WHERE LOWER(title) LIKE LOWER(:title)", //named parameter for the search. The positionnl parameter is not u
+                "SELECT * FROM books WHERE LOWER(title) LIKE LOWER(:title)", //dynamic query with named parameters
                 {
-                    replacements: { title: `%${livre.trim()}%` }, // partial reseach, cut the spaces the  % is used to find the words
+                    replacements: { title: `%${livre.trim()}%` }, // replace the named parameter with the value
+                    // the '%' character is used to match any sequence of characters
+                    // the 'LOWER' function is used to make the search case-insensitive
+                    // the 'LIKE' operator is used to search for a specified pattern in a column
                     type: sequelize.QueryTypes.SELECT, // specifie the request type that sequelize has to use
-                    raw: true, // retrurn simple data on the terminal
+                    raw: true, // retrurn simple data on the terminal instead of sequelize objects
                 }
             );
-
-            // Vérifier si des résultats ont été trouvés
+            // verify if the search returned any results
             if (books.length === 0) {
                 return res.status(404).render("search", { books: [], message: "Aucun livre trouvé avec ce titre." });
             }
-
             // Rendre la vue avec les résultats
             res.render("search", { books, message: null });
         } catch (error) {
