@@ -79,7 +79,7 @@ const displayLoginForm = async (req, res, next ) => {
         const user = await AppUser.findOne({ where: { email } });
 
         if (!user || !await bcrypt.compare(password, user.password)) {
-            return res.status(401).render("auth/login", { errors: { general: "Email ou mot de passe incorrect" } });
+            return res.status(401).render("auth/login", { errors: { general: "Mot de passe incorrect" } });
         }
         req.session.userId = user.id;
         res.redirect("/");

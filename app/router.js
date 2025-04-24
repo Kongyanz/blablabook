@@ -3,12 +3,15 @@ import { mainController} from "./controllers/mainController.js" // import mainCo
  import { appuserController } from "./controllers/appuserController.js"; // import appuserController from "./controller/appuserController.js"
 import { bookController } from "./controllers/bookController.js";
 import  authController  from "./controllers/authController.js"; 
+import { searchBooks } from "./controllers/searchController.js";
 
 const router = Router();
 
 //homepage+books routes
 router.get("/", mainController.renderHomePage);
 router.get("/livre/:id", bookController.getBookDetails);
+router.get("/search", searchBooks.search);
+
 // TODO : route pour TOUS les livres "/livres"
 
 //authentification routes

@@ -1,4 +1,5 @@
 import { AppUser } from "../models/association.js";
+
 export const appuserController = {
   async getUserById(req, res) {
     const userId = req.params.id; // Extract the user ID from the route parameter

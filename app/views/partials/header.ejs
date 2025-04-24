@@ -15,17 +15,19 @@
     <!--<form action="/search" method="GET">  -->
 
     <div class="nav-search">
-      <form action="#" method="GET">
-        <input type="text" name="query" placeholder="Rechercher un livre" aria-label="Champ de recherche">
+
+      <form method="GET" action="/search" class="search-form">
+        <input type="text" name="livre" placeholder="Rechercher un livre" aria-label="Champ de recherche">
         <button type="submit" aria-label="lancer la recherche">🔍</button>
       </form>
+
     </div>
     <!-- section bouton -->
-    <div class="nav-buttons">
+    <nav class="nav-buttons">
       <a href="/" class="nav-link" aria-label="Retour à la page d'accueil">Accueil</a>
       <a href="/livres" class="nav-link" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a>
       
-      <!-- TODO : n'afficher ce lien que si on est connecté -->
+
       <!-- <a href="/mon-compte" class="nav-link" aria-label="Consultez votre profil utilisateur">Mon Compte</a> -->
       <% if (typeof user !== 'undefined' && user) { %>
         <span>Hello <%= user.firstname %> ⛷️</span>
@@ -34,7 +36,6 @@
         <a href="/creer-un-compte" class="nav-link" aria-label="Créer un compte utilisateur">Inscription</a>
         <a href="/connexion" class="nav-link" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a>
       <% } %>
-
-    </div>
+    </nav>
 
   </header>
