@@ -7,7 +7,7 @@
     <div class="book-grid">
       <% if (booksRead.length > 0) { %> <% booksRead.forEach(book => { %>
       <div class="book">
-        <img src="<%= book.cover %>" alt="<%= book.title %>" />
+        <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
         <p><strong><%= book.title %></strong></p>
         <p><%= book.description %></p>
       </div>
@@ -22,7 +22,7 @@
     <div class="book-grid">
       <% if (booksToRead.length > 0) { %> <% booksToRead.forEach(book => { %>
       <div class="book">
-        <img src="<%= book.cover %>" alt="<%= book.title %>" />
+        <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
         <p><strong><%= book.title %></strong></p>
         <p><%= book.description %></p>
       </div>
