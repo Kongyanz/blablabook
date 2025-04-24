@@ -16,7 +16,23 @@ export const bookController = {
       console.error("Erreur lors de la récupération du livre :", error);
       res.status(500).send("Erreur serveur");
     }
-  },
-  // TODO : All books page
-  // BONUS : Pagination
+},
+   
+   async getAllBooks(req, res) {
+    try {
+    const books = await Book.findAll({
+      include: [
+        { association: "authors" },
+        { association: "gender" },
+      ],
+    });
+    res.render("library", {
+        books, // Liste des livres récupérée
+        library: "Bibliothèque", 
+      });
+    } catch (error) {
+      console.error("Erreur lors de la récupération des livres :", error);
+      res.status(500).send("Erreur serveur");
+    }
+},
 };

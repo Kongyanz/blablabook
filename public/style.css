@@ -403,23 +403,22 @@ h2 {
   color: white;
   cursor: pointer;
 }
-
+ 
 /*Library Page */
 .library {
   display: grid;
   /* Creates a grid layout for the library section */
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   /* Automatically adjusts columns based on available space */
-  gap: 30px;
-  /* Adds spacing between grid items */
-  padding: 150px 0;
-  /* Adds vertical padding to the library section */
-}
+  gap: 20px;
+  }
 
 .library .book {
-  background-color: #d6c098;
+  background-color: (--sand);
+  padding: 15px; /* Espace intérieur */
+   text-align: center;
   /* Light gray background for each book */
-  height: 110px;
+  height: 90px;
   /* Fixed height for each book item */
   display: flex;
   /* Enables flexbox for centering content */
@@ -427,10 +426,12 @@ h2 {
   /* Horizontally centers content */
   align-items: center;
   /* Vertically centers content */
-  border-radius: 9%;
+  border-radius:5px;
   /* Rounds the corners of each book item */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  /* Adds a subtle shadow for a 3D effect */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  border-radius: 3px;
 }
 
 /*User Informations Page */

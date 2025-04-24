@@ -13,6 +13,7 @@ router.get("/livre/:id", bookController.getBookDetails);
 router.get("/search", searchBooks.search);
 
 // TODO : route pour TOUS les livres "/livres"
+router.get("/livres", bookController.getAllBooks);
 
 //authentification routes
 router.post("/creer-un-compte", authController.handleSignUp);
