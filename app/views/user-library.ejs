@@ -5,44 +5,30 @@
   <section class="book-section">
     <h2>📖 Lu</h2>
     <div class="book-grid">
+      <% if (booksRead.length > 0) { %> <% booksRead.forEach(book => { %>
       <div class="book">
-        <img src="#" alt="Image Livre" />
-        <p>Description du livre...</p>
+        <img src="<%= book.cover %>" alt="<%= book.title %>" />
+        <p><strong><%= book.title %></strong></p>
+        <p><%= book.description %></p>
       </div>
-      <div class="book">
-        <img src="#" alt="Image Livre" />
-        <p>Description du livre...</p>
-      </div>
-      <div class="book">
-        <img src="#" alt="Image Livre" />
-        <p>Description du livre...</p>
-      </div>
-      <div class="book">
-        <img src="#" alt="Image Livre" />
-        <p>Description du livre...</p>
-      </div>
+      <% }) %> <% } else { %>
+      <p>Aucun livre lu pour le moment.</p>
+      <% } %>
     </div>
   </section>
   <!-- Section 2 -->
   <section class="book-section">
     <h2>📘 À lire</h2>
     <div class="book-grid">
+      <% if (booksToRead.length > 0) { %> <% booksToRead.forEach(book => { %>
       <div class="book">
-        <img src="#" alt="Image Livre" />
-        <p>Description du livre...</p>
+        <img src="<%= book.cover %>" alt="<%= book.title %>" />
+        <p><strong><%= book.title %></strong></p>
+        <p><%= book.description %></p>
       </div>
-      <div class="book">
-        <img src="#" alt="Image Livre" />
-        <p>Description du livre...</p>
-      </div>
-      <div class="book">
-        <img src="#" alt="Image Livre" />
-        <p>Description du livre...</p>
-      </div>
-      <div class="book">
-        <img src="#" alt="Image Livre" />
-        <p>Description du livre...</p>
-      </div>
+      <% }) %> <% } else { %>
+      <p>Aucun livre à lire pour le moment</p>
+      <% } %>
     </div>
   </section>
 </main>
