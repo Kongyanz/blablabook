@@ -16,7 +16,7 @@
   <div class="library">
     <% books.forEach(book => { %>
       <div class="book">
-        <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
+        <a href="/livre/<%= book.id %>"><img src="/images/<%= book.cover %>" alt="<%= book.title %>" /></a>
         <h3><%= book.title %></h3>
         <p>author(s) : <%= book.authors.map(author => author.name).join(", ") %></p>
         <p>gender : <%= book.gender.name %></p>
