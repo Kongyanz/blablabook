@@ -15,9 +15,10 @@ export const bookController = {
     } catch (error) {
       console.error("Erreur lors de la récupération du livre :", error);
       res.status(500).send("Erreur serveur");
-    }
+    };
+
 },
-   
+ 
    async getAllBooks(req, res) {
     try {
     const books = await Book.findAll({
@@ -34,5 +35,8 @@ export const bookController = {
       console.error("Erreur lors de la récupération des livres :", error);
       res.status(500).send("Erreur serveur");
     }
-},
+  },
 };
+
+   
+  
