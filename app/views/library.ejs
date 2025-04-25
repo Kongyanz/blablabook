@@ -1,28 +1,35 @@
 <%- include('partials/header') %>
-  <!--
-<div class="library">
-    <div class="book">IMG LIVRE 1</div>
-    <div class="book">IMG LIVRE 2</div>
-    <div class="book">IMG LIVRE 3</div>
-    <div class="book">IMG LIVRE 4</div>
-    <div class="book">IMG LIVRE 5</div>
-    <div class="book">IMG LIVRE 6</div>
-    <div class="book">IMG LIVRE 7</div>
-    <div class="book">IMG LIVRE 8</div>
-  </div>-->
-  <main>
+
+<main>
     <h1>Bibliothèque</h1>
     <h2>Liste des Livres Disponibles</h2>
-  <div class="library">
-    <% books.forEach(book => { %>
-      <div class="book">
-        <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
-        <h3><%= book.title %></h3>
-        <p>author(s) : <%= book.authors.map(author => author.name).join(", ") %></p>
-        <p>gender : <%= book.gender.name %></p>
-       </div>
-       <% }) %>
-    </div>
-  </main>
-
-<%- include('partials/footer') %>
+    <div class="library">
+      <% books.forEach(book=> { %> <div class="book"> <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
+          <h3>
+            <%= book.title %>
+          </h3>
+          <p>
+            author(s) : <% book.authors.forEach((author, index) => { %>
+              <% if(index > 0) { %>, <% } %><%= author.name %> <%= author.firstname %> 
+            <% }) %>  
+          </p>
+          <p>gender : <%= book.gender.name %>
+          </p>
+        </div>
+        <% }) %>
+    </div> <!-- Pagination -->
+    <% if (currentPage > 1) { %>
+      <a href="/livres?page=1">Première page</a>
+    <% } %>
+    <% if (currentPage > 1) { %>
+      <a href="/livres?page=<%= currentPage - 1 %>">Précédent</a>
+    <% } %>
+    <span>Page <%= currentPage %> sur <%= totalPages %></span>
+    <% if (currentPage < totalPages) { %>
+      <a href="/livres?page=<%= currentPage + 1 %>">Suivant</a>
+   <% } %>
+    <% if (currentPage < totalPages) { %>
+      <a href="/livres?page=<%= totalPages %>">Dernière page</a>
+    <% } %>
+  </main> 
+  <%-include('partials/footer') %>

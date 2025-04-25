@@ -10,11 +10,11 @@ const router = Router();
 //homepage+books routes
 router.get("/", mainController.renderHomePage);
 router.get("/livre/:id", bookController.getBookDetails);
-//router.get("/search", searchBooks.search);
+router.get("/search", searchBooks.search);
 
 // TODO : route pour TOUS les livres "/livres"
-router.get("/livres", bookController.getAllBooks);
-//router.get("/library", bookController.getPaginatedBooks);
+// router.get("/livres", bookController.getAllBooks);
+router.get("/livres", bookController.getPaginatedBooks);
 
 //authentification routes
 router.post("/creer-un-compte", authController.handleSignUp);
