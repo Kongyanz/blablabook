@@ -25,10 +25,8 @@ router.post("/connexion", authController.handleLogin);
 router.get("/inscription-reussie", (req, res) => {
  res.render("auth/inscription-reussie"); 
 });
-router.get("/deconnexion", authController.displayLogoutForm);
-router.post("/deconnexion", authController.handleLogout);
 
-
+router.get("/deconnexion", authController.handleLogout);
 
 //app user
 router.get("/mon-compte", appuserController.getAccountPage); // Add the route for fetching user info

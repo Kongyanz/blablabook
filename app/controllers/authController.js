@@ -11,14 +11,14 @@ const displaySignUpForm = async (req, res, next ) => {
    } catch (error) {
     next(error)
    };
-}
+};
 const displayLoginForm = async (req, res, next ) => {
     try {
      res.render("auth/login")
     } catch (error) {
      next(error)
     };
-}
+};
 const displayLogoutForm = async (req, res, next ) => {
     try {
      res.render("auth/logout")
@@ -93,17 +93,14 @@ const handleLogin = async (req, res) => {
 };
 const handleLogout = async (req, res) => {
     try {
-         await req.session.destroy((err) => {
-            if (err) {
-                console.error("Erreur lors de la destruction de la session :", err);
-                return res.status(500).send("Erreur lors de la déconnexion.");
-            }
-            res.clearCookie("connect.sid");
-            res.redirect("/home");
-        });        
+        // destruction de la session pour l'utilisateur
+        req.session.destroy();
+        // c'est de bonne pratique aussi de détruire le cookie, avec cette syntaxe
+        res.clearCookie("connect.sid");
+        res.redirect("/");
+        
     } catch (error) {
-        console.error("Erreur de déconnexion :", error);
-        res.status(500).redirect("/home");
+        next(error);
     }
 };
 const authController = {
