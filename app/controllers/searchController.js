@@ -7,7 +7,7 @@ export const searchBooks = {
             const { livre } = req.query;
             // request validation
             if (!livre || typeof livre !== 'string' || livre.trim() === '') {
-                console.error("Termes de recherche invalides :", livre);
+                // console.error("Termes de recherche invalides :", livre);
                 return res.status(400).render("search", { books: [], message: "Veuillez fournir un terme de recherche valide." });
             }
             // Sanitize the search term

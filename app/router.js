@@ -27,6 +27,8 @@ router.get("/inscription-reussie", (req, res) => {
   res.render("auth/inscription-reussie");
 });
 
+router.get("/deconnexion", authController.handleLogout);
+
 //app user
 router.get("/mon-compte", appuserController.getAccountPage); // Add the route for fetching user info
 router.post("/users/:id/delete", appuserController.remove); // Add the route for deleting a user
