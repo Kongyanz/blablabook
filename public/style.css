@@ -14,7 +14,6 @@ body {
   font-family: 'Roboto', sans-serif;
   padding: 30px;
   margin: 0;
-
 }
 
 /* Header */
@@ -484,7 +483,6 @@ h2 {
   border-radius: 5px; 
   margin-bottom: 10px;
 }
-
 
 .user-info {
   display: flex;
