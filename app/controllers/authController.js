@@ -11,16 +11,21 @@ const displaySignUpForm = async (req, res, next ) => {
    } catch (error) {
     next(error)
    };
-}
-
+};
 const displayLoginForm = async (req, res, next ) => {
     try {
      res.render("auth/login")
     } catch (error) {
      next(error)
     };
-}
-
+};
+const displayLogoutForm = async (req, res, next ) => {
+    try {
+     res.render("auth/logout")
+    } catch (error) {
+     next(error)
+    };
+};
  const handleSignUp = async (req, res, ) => {
     try {
         const { firstname, lastname, email, password, confirmation } = req.body;
@@ -71,9 +76,7 @@ const displayLoginForm = async (req, res, next ) => {
         res.status(500).render("auth/signup", { errors: { general: "Erreur interne" }, data: req.body });
     }
 };
-
-// ✅ Gérer la connexion
- const handleLogin = async (req, res) => {
+const handleLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await AppUser.findOne({ where: { email } });
@@ -88,25 +91,25 @@ const displayLoginForm = async (req, res, next ) => {
         res.status(500).render('errors/500', { error: "Erreur interne" });
     }
 };
-
-// ✅ Gérer la déconnexion
-  const logout = async (req, res) => {
+const handleLogout = async (req, res) => {
     try {
+        // destruction de la session pour l'utilisateur
         req.session.destroy();
+        // c'est de bonne pratique aussi de détruire le cookie, avec cette syntaxe
         res.clearCookie("connect.sid");
         res.redirect("/");
+        
     } catch (error) {
-        console.error("Erreur de déconnexion :", error);
-        res.status(500).redirect("/");
+        next(error);
     }
 };
-
 const authController = {
     displaySignUpForm,
     displayLoginForm,
+    displayLogoutForm,
     handleSignUp,
     handleLogin,
-    logout
+    handleLogout
 };
 
 export default authController;
