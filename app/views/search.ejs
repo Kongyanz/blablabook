@@ -2,17 +2,18 @@
 
 <div class="books-container">
   <% if (books.length === 0) { %>
-    <p>Aucun livre trouvé pour votre recherche. Veuillez écrire un livre correspondant ou ne pas laisser le champs vide.</p>
-  <% } else { %>
-    <% books.forEach(book => { %>
-      <div class="book-card">
-        <a href="/livre/<%= book.id %>">
-          <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
-        </a>
-        <h3><%= book.title %></h3>
-      </div>
-    <% }); %>
-  <% } %>
+  <p>
+    Aucun livre trouvé pour votre recherche. Veuillez écrire un livre
+    correspondant ou ne pas laisser le champs vide.
+  </p>
+  <% } else { %> <% books.forEach(book => { %>
+  <div class="book-card">
+    <a href="/livre/<%= book.id %>">
+      <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
+    </a>
+    <h3><%= book.title %></h3>
+  </div>
+  <% }); %> <% } %>
 </div>
 
 <%- include('partials/footer') %>

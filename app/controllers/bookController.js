@@ -16,118 +16,32 @@ export const bookController = {
       console.error("Erreur lors de la récupération du livre :", error);
       res.status(500).send("Erreur serveur");
     }
-
   },
 
-  //   async getAllBooks(req, res) { 
-  //   try { 
-  //     const books = await Book.findAll({ 
-  //       include: [
-  //         { association: "authors" }, 
-  //         { association: "gender" },
-  //       ], 
-  //     }); 
-  //     res.render("library", { 
-  //       books, // Liste des livres récupérée 
-  //       library: "Bibliothèque", 
-  //     }); 
-  //   } catch (error) { 
-  //     console.error("Erreur lors de la récupération des livres :", error); 
-  //     res.status(500).send("Erreur serveur"); 
-  //   } 
-  // },
   async getPaginatedBooks(req, res) {
-    const page = parseInt(req.query.page) || 1; // Page par défaut : 1
+    const page = Number.parseInt(req.query.page) || 1; // Page par défaut : 1
     const limit = 2; // Nombre de livres par page
     const offset = (page - 1) * limit; // Calcul de l'offset
 
     try {
-        const { count, rows: books } = await Book.findAndCountAll({
-            limit,
-            offset,
-            distinct: true,
-            include: [
-                { association: "authors" },
-                { association: "gender" },
-            ],
-        });
-  
-        const totalPages = Math.ceil(count / limit);
-  
-        // Rendu de la vue avec les livres et informations de pagination
-        res.render('library', {
-            books,
-            currentPage: page,
-            totalPages,
-        });
+      const { count, rows: books } = await Book.findAndCountAll({
+        limit,
+        offset,
+        distinct: true,
+        include: [{ association: "authors" }, { association: "gender" }],
+      });
+
+      const totalPages = Math.ceil(count / limit);
+
+      // Rendu de la vue avec les livres et informations de pagination
+      res.render("library", {
+        books,
+        currentPage: page,
+        totalPages,
+      });
     } catch (error) {
-        console.error('Erreur lors de la récupération des livres :', error);
-        res.status(500).send('Erreur lors de la récupération des livres.');
+      console.error("Erreur lors de la récupération des livres :", error);
+      res.status(500).send("Erreur lors de la récupération des livres.");
     }
-  }
+  },
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

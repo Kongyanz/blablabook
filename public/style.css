@@ -9,6 +9,7 @@
 
 /* Styles globaux */
 body {
+  height: 100%;
   background-color: var(--light-cream);
   color: var(--dark-blue);
   font-family: 'Roboto', sans-serif;
@@ -20,11 +21,13 @@ body {
 .header {
   display: flex;
   /* Enables Flexbox for horizontal alignment */
+  flex-wrap: wrap;
+  /* Allows items to wrap to the next line if needed */
   justify-content: space-between;
   /* Distributes space between child elements */
   align-items: center;
   /* Vertically aligns items in the center */
-  padding: 40px 90px;
+  padding: 40px 40px;
   /* Adds padding around the header */
   padding-bottom: 100px;
   /* Reduces space below the header */
@@ -32,15 +35,48 @@ body {
   /* Example background color */
   color: var(--light-cream);
   /* Example text color */
+  border-radius: 20px;
+  /*  Adds rounded corners */
+}
+
+/* Header Logo */
+.header-logo {
+  display: flex;
+  /* Aligns the logo and text horizontally */
+  align-items: center;
+  /* Centers the logo and text vertically */
+  gap: 10px;
+  /* Adds spacing between the logo and the text */
+}
+
+.header-logo .logo {
+  width: 100px;
+  /* Adjust the width of the logo */
+  height: 100px;
+  /* Adjust the height of the logo */
+  object-fit: contain;
+  /* Ensures the logo maintains its aspect ratio */
 }
 
 /* Title (BLABLABOOK) */
 .header h1 {
-  margin: 0;
-  /* Removes default margin */
-  font-size: 1rem;
-  /* Adjust font size */
+  font-size: 24px;
+  /* Increase the font size for better visibility */
   font-weight: bold;
+  /* Make the text bold */
+  color: var(--light-cream);
+  /* Set the text color to a light shade for contrast */
+  text-transform: uppercase;
+  /* Make the text uppercase */
+  letter-spacing: 2px;
+  /* Add spacing between letters for a modern look */
+  margin-left: 20px;
+  /* Add some space from the left edge */
+  display: flex;
+  /* Align the logo properly */
+  align-items: center;
+  /* Center the text vertically */
+
 }
 
 /* Nav Search*/
@@ -150,7 +186,7 @@ body {
   /* Adds padding inside the content box */
   border: 2px solid var(--dark-blue);
   /* Adds a border around the content */
-  border-radius: 10px;
+  border-radius: 20px;
   /* Rounds the corners of the content box */
   background-color: var(--light-cream);
   /* Sets the background color */
@@ -203,39 +239,79 @@ body {
 /* Main Content */
 .books-section {
   text-align: center;
+  /* Centers the text inside the books section */
   padding: 20px;
+  /* Adds padding around the books section */
 }
 
 .books-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* Creates a grid layout for the books */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Defines responsive columns that fill the available space */
+  justify-content: center;
+  /* Centers the grid columns horizontally */
   gap: 20px;
+  /* Adds spacing between grid items */
   padding: 20px;
+  /* Adds padding inside the container */
 }
 
 .book-card {
-  max-width: 600px; /* Limit the width of each card */
-  margin: 40px; /* Add spacing between cards */
-  text-align: center; /* Center-align the text */
+  max-width: 300px;
+  /* Limit the width of each card */
+  height: auto;
+  /* Automatically adjusts the height based on content */
+  margin: 0 auto;
+  /* Centers the card horizontally */
+  text-align: center;
+  /* Centers the text inside the card */
   background-color: var(--sand);
-  border-radius: 10px;
+  /* Sets the background color of the card */
+  border-radius: 15px;
+  /* Rounds the corners of the card */
   padding: 15px;
+  /* Adds padding inside the card */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow for a 3D effect */
+  transition: transform 0.2s, box-shadow 0.2s;
+  /* Adds smooth transitions for hover effects */
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  /* Moves the card slightly upward on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  /* Enhances the shadow on hover for a more pronounced effect */
 }
 
 .book-card img {
-  max-width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  width: 70%;
+  /* Reduce the width of the image */
+  max-height: 300px;
+  /* Limits the maximum height of the image */
+  object-fit: contain;
+  /* Ensure the image fits within the card without being cropped */
   border-radius: 5px;
+  /* Rounds the corners of the image */
+  margin: 0 auto 15px;
+  /* Center the image and add spacing */
+  display: block;
+  /* Ensures the image is centered */
 }
 
 .book-card h3 {
-  font-family: 'Playfair Display', serif;
-  margin: 10px 0;
+  font-family: 'Roboto', serif;
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  line-height: 1.3;
 }
 
 .book-card p {
   color: var(--charcoal);
+  margin: 5px;
+  margin: 3px 0;
+  font-size: 0.95rem;
 }
 
 /* User Page */
@@ -266,7 +342,7 @@ h2 {
 
 /*Login Page */
 /* Main Content Section */
-.login-form {
+.login-page {
   max-width: 600px;
   /* Limits the width of the form */
   margin: 50px auto;
@@ -275,7 +351,7 @@ h2 {
   /* Adds padding inside the form container */
   border: 2px solid var(--dark-blue);
   /* Adds a solid border around the form */
-  border-radius: 10px;
+  border-radius: 20px;
   /* Rounds the corners of the form container */
   background-color: var(--light-cream);
   /* Sets the background color of the form */
@@ -283,41 +359,102 @@ h2 {
   /* Adds a subtle shadow for a 3D effect */
 }
 
-.login-form form {
+.login-page form {
   display: flex;
   /* Enables Flexbox for the form layout */
   flex-direction: column;
   /* Stacks form elements vertically */
+  align-items: center;
+  /* Centers the button and other elements horizontally */
   gap: 15px;
   /* Adds spacing between form elements */
 }
 
-.login-form label {
+.login-page label {
   font-weight: bold;
   /* Makes the label text bold */
-  margin-bottom: 5px;
+  margin: 1px;
   /* Adds spacing below the label */
 }
 
-.login-form input {
+.login-page input {
   padding: 10px;
   /* Adds padding inside the input fields */
+  width: 80%;
+  /* Makes the input fields responsive */
+  max-width: 400px;
+  /* Limits the maximum width of the input fields */
+  margin: top 1px;
+
   border: 1px solid #ccc;
   /* Adds a light border around the input fields */
-  border-radius: 5px;
+  border-radius: 20px;
   /* Rounds the corners of the input fields */
   font-size: 1rem;
   /* Sets the font size of the input text */
 }
 
-/* Buttons Section */
-.form-buttons {
-  display: flex;
-  /* Enables Flexbox for the buttons layout */
-  justify-content: space-between;
-  /* Distributes buttons evenly */
-  margin-top: 20px;
-  /* Adds spacing above the buttons */
+.login-page button {
+  padding: 10px 20px;
+  /* Adds padding inside the button */
+  width: 50%;
+  /* Sets the button width */
+  background-color: var(--dark-blue);
+  /* Matches your dark blue color */
+  color: var(--light-cream);
+  /* Matches your light cream text color */
+  border: none;
+  /* Removes the default border */
+  border-radius: 20px;
+  /* Rounds the corners of the button */
+  font-size: 1rem;
+  /* Sets the font size */
+  font-weight: bold;
+  /* Makes the text bold */
+  cursor: pointer;
+  /* Changes the cursor to a pointer on hover */
+  text-transform: uppercase;
+  /* Makes the text uppercase */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow for a 3D effect */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Smooth hover effect */
+}
+
+.login-page button:hover {
+  background-color: var(--charcoal);
+  /* Changes the background color on hover */
+  transform: translateY(-2px);
+  /* Slightly moves the button upward on hover */
+}
+
+.login-page p {
+  font-size: 0.9rem;
+  /* Sets a slightly smaller font size */
+  color: var(--charcoal);
+  /* Matches your text color */
+  margin-top: 15px;
+  /* Adds spacing above the paragraph */
+  text-align: center;
+  /* Centers the text */
+}
+
+.login-page p a {
+  color: var(--dark-blue);
+  /* Sets the link color to match your theme */
+  font-weight: bold;
+  /* Makes the link text bold */
+  text-decoration: none;
+  /* Removes the underline from the link */
+  transition: color 0.3s;
+  /* Adds a smooth transition for hover effects */
+}
+
+.login-page p a:hover {
+  color: var(--charcoal);
+  /* Changes the link color on hover */
+  text-decoration: underline;
+  /* Adds an underline on hover for emphasis */
 }
 
 /* Signup form */
@@ -329,26 +466,31 @@ h2 {
 
 .register-form .input-group label {
   display: block;
+  font-weight: bold;
 }
 
-.register-form input[type="text"], 
+.register-form input[type="text"],
 .register-form input[type="email"],
 .register-form input[type="password"] {
+  font-weight: bold;
   display: block;
   height: 40px;
   padding-left: 15px;
   margin-bottom: 10px;
   border: none;
+  border-radius: 10px;
   width: 100%;
 }
 
-.btn {
+.btn-submit {
   padding: 10px 20px;
   /* Adds padding inside the buttons */
   border: none;
   /* Removes the default border */
-  border-radius: 5px;
+  border-radius: 10px;
   /* Rounds the corners of the buttons */
+  margin-bottom: 50px;
+  /* Adds spacing below the buttons */
   background-color: var(--dark-blue);
   /* Sets the background color of the buttons */
   color: var(--light-cream);
@@ -359,129 +501,231 @@ h2 {
   /* Sets the font size of the button text */
 }
 
-.btn:hover {
+.btn-submit:hover {
   background-color: var(--charcoal);
   /* Changes the background color on hover */
 }
 
-.btn.danger {
+.register-success {
+  max-width: 600px;
+  /* Limits the width of the content */
+  margin: 50px auto;
+  /* Centers the content horizontally and adds vertical spacing */
+  text-align: center;
+  /* Centers the text inside the container */
+  padding: 30px;
+  /* Adds padding inside the container */
+  border: 2px solid var(--dark-blue);
+  /* Adds a border to match your theme */
+  border-radius: 20px;
+  /* Rounds the corners of the container */
+  background-color: var(--light-cream);
+  /* Sets the background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow for a 3D effect */
+}
+
+.register-success h1 {
+  font-size: 2.5rem;
+  /* Sets the font size for the heading */
+  color: var(--dark-blue);
+  /* Matches the heading color with your theme */
+  margin-bottom: 20px;
+  /* Adds spacing below the heading */
+}
+
+.register-success p {
+  font-size: 1.5rem;
+  /* Sets the font size for the paragraph */
+  color: var(--charcoal);
+  /* Matches the text color */
+  margin-bottom: 20px;
+  /* Adds spacing below the paragraph */
+}
+
+.register-success a {
+  display: inline-block;
+  /* Makes the links behave like buttons */
+  padding: 10px 20px;
+  /* Adds padding inside the links */
+  margin: 10px;
+  /* Adds spacing between the links */
   background-color: var(--dark-blue);
-  /* Sets the background color for the danger button */
+  /* Sets the background color */
   color: var(--light-cream);
-  /* Sets the text color for the danger button */
+  /* Sets the text color */
+  text-decoration: none;
+  /* Removes the underline */
+  border-radius: 20px;
+  /* Rounds the corners of the links */
+  font-size: 1rem;
+  /* Sets the font size */
+  font-weight: bold;
+  /* Makes the text bold */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Adds smooth hover effects */
 }
 
-.btn.danger:hover {
-  background-color: darkred;
-  /* Changes the background color of the danger button on hover */
+.register-success a:hover {
+  background-color: var(--charcoal);
+  /* Changes the background color on hover */
+  transform: translateY(-2px);
+  /* Slightly moves the link upward on hover */
 }
-
-
-
 
 
 /* Book-detailes Page */
- .book-details { 
-  display: flex; 
+.book-details {
+  display: flex;
   justify-content: center;
   gap: 20px;
-  margin: 20px; 
-} 
+  margin: 20px;
+}
 
-.book-details img { 
-  width: 150px; 
-  height: 200px; 
-  object-fit: cover; 
-  background-color: lightgray; 
-} 
-.book-info { 
+.book-details img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  background-color: lightgray;
+}
+
+.book-info {
   max-width: 600px;
- } 
- .book-info h2 { 
-  margin-top: 10px;
- } 
+}
 
- .action-buttons {
-  display: flex; /* Enables Flexbox for horizontal alignment */
-  gap: 10px; /* Adds spacing between the buttons */
-  justify-content: center; /* Centers the buttons horizontally */
-  margin-top: 20px; /* Adds spacing above the buttons */
-  margin-bottom: 20px; /* Adds spacing below the buttons */
+.book-info h2 {
+  margin-top: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  /* Enables Flexbox for horizontal alignment */
+  gap: 10px;
+  /* Adds spacing between the buttons */
+  justify-content: center;
+  /* Centers the buttons horizontally */
+  margin-top: 20px;
+  /* Adds spacing above the buttons */
+  margin-bottom: 20px;
+  /* Adds spacing below the buttons */
 }
 
 .action-buttons button {
-  padding: 10px 20px; /* Adds padding inside the buttons */
-  border: none; /* Removes the default border */
-  border-radius: 10px; /* Rounds the corners of the buttons */
-  background-color: #555; /* Sets the background color */
-  color: white; /* Sets the text color */
-  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  padding: 10px 20px;
+  /* Adds padding inside the buttons */
+  border: none;
+  /* Removes the default border */
+  border-radius: 10px;
+  /* Rounds the corners of the buttons */
+  background-color: #555;
+  /* Sets the background color */
+  color: white;
+  /* Sets the text color */
+  cursor: pointer;
+  /* Changes the cursor to a pointer on hover */
 }
 
 .action-buttons a {
-  padding: 10px 20px; /* Adds padding inside the button */
-  border: none; /* Removes the default border */
-  border-radius: 15px; /* Rounds the corners */
-  background-color: #555; /* Sets the background color */
-  color: white; /* Sets the text color */
-  cursor: pointer; /* Changes the cursor to a pointer on hover */
-  
-  text-align: center; /* Centers the text inside the button */
+  padding: 10px 20px;
+  /* Adds padding inside the button */
+  border: none;
+  /* Removes the default border */
+  border-radius: 15px;
+  /* Rounds the corners */
+  background-color: #555;
+  /* Sets the background color */
+  color: white;
+  /* Sets the text color */
+  cursor: pointer;
+  /* Changes the cursor to a pointer on hover */
+
+  text-align: center;
+  /* Centers the text inside the button */
 }
 
 .action-buttons a:hover {
-  background-color: #333; /* Changes the background color on hover */
+  background-color: #333;
+  /* Changes the background color on hover */
 }
- 
+
 .action-buttons button:hover {
-  background-color: #333; /* Changes the background color on hover */
+  background-color: #333;
+  /* Changes the background color on hover */
 }
- 
-  /*Library Page */ 
-  .library { 
-    display: grid; 
-  /* Creates a grid layout for the library section */ 
-  grid-template-columns: repeat(4, 1fr); 
-  /* Automatically adjusts columns based on available space */ 
-  gap: 20px; 
-} 
-/* Library Section */ 
-.library { 
-  display: grid; 
-  /* Crée une disposition en grille */ 
-  grid-template-columns: repeat(3, 1fr); 
-  /* Définit 3 colonnes égales */ 
-  gap: 20px; 
-  /* Ajoute un espacement entre les livres */ 
-  padding: 30px; /* Ajoute de l'espace autour de la bibliothèque */ 
-  justify-content: center; 
-  /* Centre les éléments horizontalement */ 
-} 
-/* Book Items */ 
-.library.book { 
-  background-color: var(--sand); 
-  /* Utilise la couleur définie dans ta palette */ 
-  padding: 15px; /* Ajoute de l'espace intérieur */ 
-  text-align: center; /* Centre le contenu texte */ 
-  border-radius: 10px; 
-  /* Coins arrondis */ 
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
-  /* Ajoute une ombre subtile */ 
-  display: flex; 
-  /* Utilise Flexbox pour centrer le contenu dans chaque livre */ 
-  justify-content: center; 
-  /* Centre horizontalement le contenu */ 
-  align-items: center; 
-  /* Centre verticalement le contenu */ 
-  height: 200px;  
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; padding: 30px; 
-  justify-content: center; 
-  max-width: 100%; 
-  height: auto; 
-  border-radius: 5px; 
-  margin-bottom: 10px;
+
+/*Library Page */
+/* Library Section */
+.library {
+  display: grid;
+  /* Creates a grid layout */
+  grid-template-columns: repeat(3, 1fr);
+  /* Defines 3 equal columns */
+  gap: 20px;
+  /* Adds spacing between the books */
+  padding: 30px;
+  /* Adds space around the library */
+  justify-content: center;
+  /* Centers the grid items horizontally */
+  margin: 0 auto;
+  /* Centers the library horizontally */
+  max-width: 1200px;
+  /* Limits the width of the library */
+  margin-top: 20px;
+  /* Adds space above the library */
+  margin-bottom: 20px;
+  /* Adds space below the library */
+  text-align: center;
+  /* Ensures text inside the grid is centered */
+}
+
+.pagination {
+  display: flex;
+  /* Enables Flexbox for horizontal alignment */
+  justify-content: center;
+  /* Centers the pagination links */
+  align-items: center;
+  /* Vertically aligns the links */
+  gap: 10px;
+  /* Adds spacing between the links */
+  margin-top: 20px;
+  /* Adds spacing above the pagination */
+  margin-bottom: 20px;
+  /* Adds spacing below the pagination */
+}
+
+.pagination a {
+  padding: 8px 15px;
+  /* Adds padding inside the links */
+  background-color: var(--dark-blue);
+  /* Sets the background color */
+  color: var(--light-cream);
+  /* Sets the text color */
+  text-decoration: none;
+  /* Removes the underline */
+  border-radius: 10px;
+  /* Rounds the corners of the links */
+  font-size: 0.9rem;
+  /* Sets the font size */
+  font-weight: bold;
+  /* Makes the text bold */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Adds smooth hover effects */
+}
+
+.pagination a:hover {
+  background-color: var(--charcoal);
+  /* Changes the background color on hover */
+  transform: translateY(-2px);
+  /* Slightly moves the link upward on hover */
+}
+
+.pagination span {
+  font-size: 0.9rem;
+  /* Sets the font size for the current page text */
+  font-weight: bold;
+  /* Makes the text bold */
+  color: var(--charcoal);
+  /* Matches the text color */
 }
 
 .user-info {
@@ -493,7 +737,7 @@ h2 {
   /* Centers content vertically */
   align-items: center;
   /* Centers content horizontally */
-  width: 400px;
+  width: 500px;
   /* Sets the width of the square */
   height: 400px;
   /* Sets the height of the square */
@@ -540,6 +784,7 @@ h2 {
   margin-bottom: 15px;
   /* Adds spacing between input fields */
 }
+
 .delete-button {
   background-color: #534dff;
   color: white;
@@ -561,11 +806,27 @@ h2 {
   padding: 15px;
   text-align: center;
 }
+
 /* Pour les écrans de moins de 768px (tablettes et mobiles) */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
     padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .nav-search {
+    max-width: 100%;
+    margin: 10px 0;
   }
 
   .nav-buttons {
@@ -575,14 +836,24 @@ h2 {
     gap: 10px;
   }
 
+  .nav-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
   .books-container {
-    grid-template-columns: 1fr; /* Une seule colonne sur petit écran */
+    grid-template-columns: 1fr;
+    /* Une seule colonne sur petit écran */
   }
 
   .user-info {
     width: 90%;
     height: auto;
     padding: 20px;
+  }
+
+  .user-info h2 {
+    font-size: 1.2rem;
   }
 }
 

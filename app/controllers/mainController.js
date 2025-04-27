@@ -6,7 +6,7 @@ export const mainController = {
 		console.log(req.session?.userId);
 		const books = await Book.findAll({
 			order: sequelize.random(),
-			limit: 4,
+			limit: 5,
 			include: [
 				{
 					association: "authors",
