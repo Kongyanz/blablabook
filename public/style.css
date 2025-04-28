@@ -859,7 +859,6 @@ h2 {
     height: auto;
     padding: 20px;
   }
-<<<<<<< HEAD
 .burger-button{
   display: inline-block;
   cursor: pointer;
@@ -882,12 +881,10 @@ h2 {
   transition: all 0.3s ease;
   transform: translate(0, -11px) rotate(45deg);
 }
-=======
 
   .user-info h2 {
     font-size: 1.2rem;
   }
->>>>>>> 3f793bcb288fb18a3685a3b05bd41f870102ca0d
 }
 
 /* Pour les écrans de moins de 480px (téléphones) */
