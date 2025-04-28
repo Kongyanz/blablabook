@@ -6,40 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BlablaBook</title>
   <link rel="stylesheet" href="/style.css">
+  <script src="/burger-button.js" defer></script>
   <meta name="description" content="BlablaBook est une bibliothèque numérique où vous pouvez explorer, lire et partager des livres en ligne.">
 </head>
 
 <body>
   <header class="header">
     <h1>BLABLABOOK</h1>
-    <!--barre de recherche au centre du header -->
-    <!--<form action="/search" method="GET">  -->
+
+    <div class="burger-button ">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
 
     <div class="nav-search">
 
-      <form method="GET" action="/search" class="search-form">
+      <form method="GET" action="/search" class="search__form">
         <input type="text" name="livre" placeholder="Rechercher un livre" aria-label="Champ de recherche">
         <button type="submit" aria-label="lancer la recherche">🔍</button>
       </form>
 
     </div>
-    <!-- section bouton -->
+
     <nav class="nav-buttons">
       <a href="/" class="nav-link" aria-label="Retour à la page d'accueil">Accueil</a>
       <a href="/livres" class="nav-link" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a>
-      
+
 
       <!-- <a href="/mon-compte" class="nav-link" aria-label="Consultez votre profil utilisateur">Mon Compte</a> -->
-      <% if (typeof user !== 'undefined' && user) { %>
+      <% if (typeof user !=='undefined' && user) { %>
         <span>Hello <%= user.firstname %> ⛷️</span>
         <a href="/mon-compte" class="nav-link" aria-label="Consultez votre profil utilisateur">Mon Compte</a>
         <a href="/deconnexion" class="nav-link" aria-label="Déconnexion de votre compte utilisateur">Déconnexion</a>
         <a href="/ma-bibliotheque" class="nav-link" aria-label="Consultez votre bibliothèque">Ma Bibliothèque</a>
-      <% } else  { %>
-        <a href="/creer-un-compte" class="nav-link" aria-label="Créer un compte utilisateur">Inscription</a>
-        <a href="/connexion" class="nav-link" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a>
-        
-      <% } %>
+        <% } else { %>
+          <a href="/creer-un-compte" class="nav-link" aria-label="Créer un compte utilisateur">Inscription</a>
+          <a href="/connexion" class="nav-link"
+            aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a>
+
+          <% } %>
     </nav>
 
   </header>

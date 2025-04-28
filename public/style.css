@@ -17,7 +17,7 @@ body {
 }
 
 /* Header */
-.header {
+header {
   display: flex;
   /* Enables Flexbox for horizontal alignment */
   justify-content: space-between;
@@ -33,6 +33,14 @@ body {
   color: var(--light-cream);
   /* Example text color */
 }
+/*burger menu */
+.burger-menu {
+  cursor: pointer;
+  display: none;
+  /* Hides the burger menu by default */
+}
+
+
 
 /* Title (BLABLABOOK) */
 .header h1 {
@@ -375,11 +383,6 @@ h2 {
   background-color: darkred;
   /* Changes the background color of the danger button on hover */
 }
-
-
-
-
-
 /* Book-detailes Page */
  .book-details { 
   display: flex; 
@@ -569,7 +572,7 @@ h2 {
   }
 
   .nav-buttons {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
@@ -584,6 +587,28 @@ h2 {
     height: auto;
     padding: 20px;
   }
+.burger-button{
+  display: inline-block;
+  cursor: pointer;
+}
+.bar1, .bar2, .bar3 {   
+  background-color: var(--light-cream);  
+  width: 35px;
+  height: 4px;
+  margin: 6px auto;
+}
+.change .bar1{
+  transition: all 0.3s ease;
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.change .bar2{
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.change .bar3{
+  transition: all 0.3s ease;
+  transform: translate(0, -11px) rotate(45deg);
+}
 }
 
 /* Pour les écrans de moins de 480px (téléphones) */
