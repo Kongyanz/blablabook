@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="action-buttons">
-    <!-- Form to mark the book as read -->
+    <% if (typeof user !=='undefined' && user) { %>
     <form action="/livres/<%= book.id %>/mark-read" method="POST">
       <button type="submit" aria-label="Marquer comme lu">Lu</button>
     </form>
@@ -47,6 +47,7 @@
         À Lire
       </button>
     </form>
+    <% } %>
     <a href="/" aria-label="Retour à la bibliothèque">Retour</a>
   </div>
 </main>
