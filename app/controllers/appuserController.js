@@ -9,7 +9,7 @@ export const appuserController = {
     const user = await AppUser.findByPk(userId); // Fetch the user from the database using the primary key
 
     if (!user) {
-      return res.redirect("/user-informations"); // Handle case where user doesn't exist
+      return res.redirect("/mon-compte"); // Redirect to an error page if the user is not found
     }
     res.render("user-informations", { user }); // Pass the user data to the EJS view
   },
@@ -26,7 +26,8 @@ export const appuserController = {
       res.render("user-informations", { user }); // Render the account page with user data
     } catch (error) {
       console.error("Error fetching account page:", error);
-      res.redirect("/"); // Redirect to an error page in case of an unexpected error
+     // res.redirect("/"); // Redirect to an error page in case of an unexpected error
+     res.status(500).render('errors/500', { error: "Erreur interne" });
     }
   },
   async remove(req, res) {
