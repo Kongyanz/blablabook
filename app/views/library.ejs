@@ -1,47 +1,31 @@
 <%- include('partials/header') %>
-  <main>
-    <h1>Bibliothèque</h1>
-    <h2>Liste des Livres Disponibles</h2>
+
+    <h2>Bibliothèque</h2>
+
     <div class="library">
-      <% books.forEach(book=> { %> <div class="book"> <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
-          <h3>
-            <%= book.title %>
-          </h3>
+      <% books.forEach(book=> { %> 
+        <div class="book"> 
+          <a href="/livre/<%= book.id %>">
+            <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
+          </a>
+          <h3><%= book.title %></h3>
           <p>
-            author(s) : <% book.authors.forEach((author, index) => { %>
-              <% if(index > 0) { %>, <% } %><%= author.name %> <%= author.firstname %> 
-            <% }) %>  
-          </p>
-          <p>gender : <%= book.gender.name %>
+              <% book.authors.forEach((author, index)=> { %>
+              <% if(index> 0) { %>, <% } %>
+                  <%= author.name %>
+                  <%= author.firstname %>
+              <% }) %>
           </p>
         </div>
-        <% }) %>
-    </div> <!-- Pagination -->
+      <% }) %>
+    </div>
+
     <div class="pagination">
-    <% if (currentPage > 1) { %>
-      <a href="/livres?page=1">Première page</a>
-    <% } %>
-    <% if (currentPage > 1) { %>
-      <a href="/livres?page=<%= currentPage - 1 %>">Précédent</a>
-    <% } %>
-    <span>Page <%= currentPage %> sur <%= totalPages %></span>
-    <% if (currentPage < totalPages) { %>
-      <a href="/livres?page=<%= currentPage + 1 %>">Suivant</a>
-   <% } %>
-    <% if (currentPage < totalPages) { %>
-      <a href="/livres?page=<%= totalPages %>">Dernière page</a>
-    <% } %>
-  </main> 
+      <% if (currentPage> 1) { %><a href="/livres?page=1">Première page</a><% } %>
+      <% if (currentPage> 1) { %><a href="/livres?page=<%= currentPage - 1 %>">Précédent</a><% } %>
+      <span>Page <%= currentPage %> sur <%= totalPages %></span>
+      <% if (currentPage < totalPages) { %><a href="/livres?page=<%= currentPage + 1 %>">Suivant</a><% } %>
+      <% if (currentPage < totalPages) { %><a href="/livres?page=<%= totalPages %>">Dernière page</a><% } %>
+    </div>
+
   <%-include('partials/footer') %>
-
-
-
-
-
-
-
-
-
-
-
-

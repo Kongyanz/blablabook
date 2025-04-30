@@ -20,5 +20,3 @@ export const mainController = {
 		res.render("home", { books });
 	},
 };
-
-export default mainController;

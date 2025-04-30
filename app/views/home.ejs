@@ -1,39 +1,34 @@
 <%- include('partials/header') %>
 
-<section class="welcome-section">
-  <h2>Bienvenue sur BlablaBook</h2>
-  <div class="welcome-content">
-    <p>
-      Votre plateforme de partage de livres et d'échanges littéraires. Découvrez
-      une communauté passionnée par la lecture, partagez vos
-      <strong>livres</strong> préférés, et explorez des recommandations
-      personnalisées pour enrichir votre bibliothèque. Lire, Partager,
-      Connecter!
-    </p>
-    <p class="highlight">Lire, Partager, Connecter</p>
-  </div>
-</section>
-<!-- section livres -->
-<section class="books-section">
-  <h2>Découvrez nos livres</h2>
-  <div class="books-container">
-    <% books.forEach(book=> { %>
-    <div class="book-card">
-      <a href="/livre/<%= book.id %>">
-        <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
-      </a>
-      <h3><%= book.title %></h3>
-      <p>
-        <%= book.authors[0].name %> <%= book.authors[0].firstname %> • <%=
-        book.gender.name %> • <%= book.year %>
+  <section class="welcome-section">
+    <h1>Bienvenue sur BlablaBook</h1>
+      <p class="welcome-section__lead">
+        Votre plateforme de découverte littéraire<br>
+        Que vous soyez un lecteur novice, amateur ou passionné, notre objectif est de créer une communauté de passionné de lecteure.<br>
+        Lire, Partager, Connecter, chaque lecteur trouvera sa page !
       </p>
+  </section>
+
+  <section class="home-books-section">
+    <h2>Découvrez notre sélection</h2>
+    <div class="books-container">
+      <% books.forEach(book=> { %>
+        <div class="book-card">
+          <a href="/livre/<%= book.id %>">
+            <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
+          </a>
+          <h3>
+            <%= book.title %>
+          </h3>
+          <p>
+            <strong>
+              <%= book.authors[0].name %>
+              <%= book.authors[0].firstname %>
+            </strong>
+          </p>
+        </div>
+        <% }); %>
     </div>
-    <% }); %>
-  </div>
-  <!-- Add the image below the books section -->
-  <div class="books-image">
-    <img src="/images/BookLibrary.png" alt="Bookshelf" />
-  </div>
-</section>
+  </section>
 
 <%- include('partials/footer') %>

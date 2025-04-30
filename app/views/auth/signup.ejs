@@ -1,72 +1,47 @@
 <%- include('../partials/header') %>
 
-<h1>Inscription</h1>
-<!-- Toast en cas d'erreur -->
-<% if (typeof errors !=="undefined" ) { %>
-<div class="alert alert-danger" role="alert">
-  <% for (const errorAttribute in errors) { %> <%- errors[errorAttribute] %>
-  <br />
-  <% } %>
-</div>
-<% } %>
-<main class="register-form">
-  <form action="/creer-un-compte" method="POST">
-    <div class="input-group">
-      <label for="firstname">Prénom</label>
-      <input
-        required
-        type="text"
-        id="firstname"
-        name="firstname"
-        placeholder="Prénom"
-        value="<%= typeof data !== 'undefined' && data.firstname ? data.firstname : '' %>"
-      />
+  <h1>Inscription</h1>
+
+  <% if (typeof errors !=="undefined" ) { %>
+    <div class="alert alert-danger" role="alert">
+      <% for (const errorAttribute in errors) { %> <%- errors[errorAttribute] %>
+          <br />
+      <% } %>
     </div>
+    <% } %>
+    
+      <main class="register-form">
+        <form action="/creer-un-compte" method="POST">
+          <div class="input-group">
+            <label for="firstname">Prénom</label>
+            <input required type="text" id="firstname" name="firstname" placeholder="Prénom"
+              value="<%= typeof data !== 'undefined' && data.firstname ? data.firstname : '' %>" />
+          </div>
 
-    <div class="input-group">
-      <label for="lastname">Nom</label>
-      <input
-        type="text"
-        id="lastname"
-        name="lastname"
-        placeholder="Nom"
-        value="<%= typeof data !== 'undefined' && data.lastname ? data.lastname : '' %>"
-      />
-    </div>
+          <div class="input-group">
+            <label for="lastname">Nom</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Nom"
+              value="<%= typeof data !== 'undefined' && data.lastname ? data.lastname : '' %>" />
+          </div>
 
-    <div class="input-group">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="email@domain.com"
-        value="<%= typeof data !== 'undefined' && data.email ? data.email : '' %>"
-      />
-    </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email@domain.com"
+              value="<%= typeof data !== 'undefined' && data.email ? data.email : '' %>" />
+          </div>
 
-    <div class="input-group">
-      <label for="password">Mot de passe</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="*********"
-      />
-    </div>
+          <div class="input-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="*********" />
+          </div>
 
-    <div class="input-group">
-      <label for="confirmation">Confirmation du mot de passe</label>
-      <input
-        type="password"
-        id="confirmation"
-        name="confirmation"
-        placeholder="*********"
-      />
-    </div>
+          <div class="input-group">
+            <label for="confirmation">Confirmation du mot de passe</label>
+            <input type="password" id="confirmation" name="confirmation" placeholder="*********" />
+          </div>
 
-    <Button type="submit" class="btn-submit">Créer un compte</Button>
-  </form>
-</main>
+          <Button type="submit" class="btn-submit">Créer un compte</Button>
+        </form>
+      </main>
 
-<%- include('../partials/footer') %>
+      <%- include('../partials/footer') %>

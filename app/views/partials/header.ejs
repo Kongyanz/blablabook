@@ -4,51 +4,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlablaBook</title>
-  <link rel="stylesheet" href="/style.css" />
-  <script src="/burger-button.js" defer></script>
   <meta name="description"
-    content="BlablaBook est une bibliothèque numérique où vous pouvez explorer, lire et partager des livres en ligne." />
+    content="BlablaBook est une bibliothèque où vous pourrez découvrir une sélection de bestseller, vous inscrire et gérer votre bibliothèque personnelle." />
+  <title>BlablaBook</title>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/base.css"/>
+  <link rel="stylesheet" href="/css/layout.css"/>
+  <script src="/burger-button.js" defer></script>
 </head>
 
+<body>
+  <header>
 
+    <figure>
+      <img src="/icons/logo.svg" alt="logo de BlablaBook" class="logo"/>
+    </figure>
 
+    <form method="GET" action="/search" class="search-form">
+      <input type="text" name="livre" aria-label="Champ de recherche" class="search-form__text" placeholder="Recherche.."/>
+      <button type="submit" aria-label="lancer la recherche" class="search-form__button">
+        <img src="/icons/loop.svg" alt="" class="loop-icon">
+      </button>
+    </form>
 
-  <body>
-    <header class="header">
-      <div class="header-logo">
-        <img src="/images/Logo.png" alt="BlablaBook Logo" class="logo" />
-        
-    <div class="burger-button ">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
-
-        <h1>BLABLABOOK</h1>
-      </div>
-      <div class="nav-search">
-        <form method="GET" action="/search" class="search-form">
-          <input type="text" name="livre" placeholder="Rechercher un livre" aria-label="Champ de recherche" />
-          <button type="submit" aria-label="lancer la recherche">🔍</button>
-        </form>
-      </div>
-      <!-- section bouton -->
-      <nav class="nav-buttons">
-        <a href="/" class="nav-link" aria-label="Retour à la page d'accueil">Accueil</a>
-        <a href="/livres" class="nav-link" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a>
-
+    <nav>
+      <ul class="nav-list">
+          <li><a href="/" class="nav-list__link" aria-label="Retour à la page d'accueil">Accueil</a></li>
+          <li><a href="/livres" class="nav-list__link" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a></li>
         <% if (typeof user !=='undefined' && user) { %>
-          <span>Hello <%= user.firstname %> 👋</span>
-          <a href="/mon-compte" class="nav-link" aria-label="Consultez votre profil utilisateur">Mon Compte</a>
-          <a href="/deconnexion" class="nav-link" aria-label="Déconnexion de votre compte utilisateur">Déconnexion</a>
-          <a href="/ma-bibliotheque" class="nav-link" aria-label="Consultez votre bibliothèque">Ma Bibliothèque</a>
-          <% } else { %>
-            <a href="/creer-un-compte" class="nav-link" aria-label="Créer un compte utilisateur">Inscription</a>
-            <a href="/connexion" class="nav-link"
-              aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a
-            <% } %>
-      </nav>
-    </header>
-
-
+          <span>Bonjour <%= user.firstname %></span>
+          <li><a href="/mon-compte" class="nav-list__link" aria-label="Consultez votre profil utilisateur">Mon compte</a></li>
+          <li><a href="/deconnexion" class="nav-list__link" aria-label="Déconnexion de votre compte utilisateur">Déconnexion</a></li>
+          <li> <a href="/ma-bibliotheque" class="nav-list__link" aria-label="Consultez votre bibliothèque">Ma bibliothèque</a></li>
+        <% } else { %>
+          <li><a href="/creer-un-compte" class="nav-list__link" aria-label="Créer un compte utilisateur">Inscription</a></li>
+          <li><a href="/connexion" class="nav-list__link" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
+  <main>

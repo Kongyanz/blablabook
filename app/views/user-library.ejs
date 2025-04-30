@@ -1,35 +1,33 @@
 <%- include('partials/header') %>
 
-<main class="user-library">
-  <!-- Section 1 -->
-  <section class="book-section">
-    <h2>📖 Lu</h2>
+  <h2>Ma bibliothèque</h2>
+
+  <section class="user-library">
+    <h3>Lu</h3>
     <div class="book-grid">
       <% if (booksRead.length > 0) { %> <% booksRead.forEach(book => { %>
       <div class="book">
         <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
         <p><strong><%= book.title %></strong></p>
-        <p><%= book.description %></p>
       </div>
       <% }) %> <% } else { %>
-      <p>Aucun livre lu pour le moment.</p>
+      <p>Aucun livre lu pour le moment...</p>
       <% } %>
     </div>
   </section>
-  <!-- Section 2 -->
-  <section class="book-section">
-    <h2>📘 À lire</h2>
+
+  <section class="user-library">
+    <h3>À lire</h3>
     <div class="book-grid">
       <% if (booksToRead.length > 0) { %> <% booksToRead.forEach(book => { %>
       <div class="book">
         <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
         <p><strong><%= book.title %></strong></p>
-        <p><%= book.description %></p>
       </div>
       <% }) %> <% } else { %>
-      <p>Aucun livre à lire pour le moment</p>
+      <p>Aucun livre à lire pour le moment...</p>
       <% } %>
     </div>
   </section>
-</main>
+
 <%- include('partials/footer') %>

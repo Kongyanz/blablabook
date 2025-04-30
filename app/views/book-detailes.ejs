@@ -1,14 +1,12 @@
 <%- include('partials/header') %>
 
-<main>
   <div class="book-details">
     <div class="book-container">
-      <img
-        src="/images/<%= book.cover %>"
-        alt="Couverture de <%= book.title %>"
-      />
+      <img src="/images/<%= book.cover %>" alt="Couverture de <%= book.title %>"/>
+
       <div class="book-info">
-        <h2><%= book.title %></h2>
+        
+        <h3><%= book.title %></h3>
         <p>
           <strong>Auteur :</strong>
           <% if (book.authors && book.authors.length > 0) { %> <%=
@@ -36,12 +34,13 @@
       </div>
     </div>
   </div>
+
   <div class="action-buttons">
     <% if (typeof user !=='undefined' && user) { %>
     <form action="/livres/<%= book.id %>/mark-read" method="POST">
       <button type="submit" aria-label="Marquer comme lu">Lu</button>
     </form>
-    <!-- Form to add the book to "To Read" -->
+
     <form action="/livres/<%= book.id %>/add-to-read" method="POST">
       <button type="submit" aria-label="Ajouter aux livres à lire">
         À Lire
@@ -50,6 +49,5 @@
     <% } %>
     <a href="/" aria-label="Retour à la bibliothèque">Retour</a>
   </div>
-</main>
 
 <%- include('partials/footer') %>

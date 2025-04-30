@@ -1,28 +1,17 @@
 <%- include('../partials/header') %>
-<main class="login-page">
-  <form class="login" method="POST">
-    <h1>Connexion</h1>
 
-    <label for="email">Email</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      placeholder="Entrez votre email"
-    />
+    <form class="login" method="POST">
+      <h1>Connexion</h1>
 
-    <label for="password">Mot de passe</label>
-    <input
-      type="password"
-      id="password"
-      name="password"
-      placeholder="Entrez votre mot de passe"
-    />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Entrez votre email" />
 
-    <button type="submit">Se connecter</button>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" />
 
-    <p>Pas encore de compte ? <a href="/creer-un-compte">Inscrivez-vous</a></p>
-  </form>
-</main>
+      <button type="submit">Se connecter</button>
 
-<%- include('../partials/footer') %>
+      <p>Pas encore de compte ? <a href="/creer-un-compte">Inscrivez-vous.</a></p>
+    </form>
+
+  <%- include('../partials/footer') %>

@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
-<main class="user-info">
   <h2>Mes Informations</h2>
+
   <form>
     <label for="email">Mail</label>
     <input
@@ -30,14 +30,13 @@
       readonly
     />
   </form>
-  <!-- Delete Account Form -->
+
   <form
     action="/users/<%= user.id %>/delete"
     method="POST"
     onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?');"
   >
-    <button type="submit" class="delete-button">Supprimer mon compte</button>
+    <button type="submit" class="button-component">Supprimer mon compte</button>
   </form>
-</main>
 
 <%- include('partials/footer') %>
