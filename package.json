@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch index.js",
+    "start": "node --watch index.js",
     "db:create": "node app/migrations/createTables.js",
-    "db:seed": "node app/migrations/seedTables.js"
+    "db:seed": "node app/migrations/seedTables.js",
+    "psql": "psql -U blablabook -d books",
+    "db": "docker exec -it blablabook-database-1 psql -U blablabook -d books"
   },
   "repository": {
     "type": "git",

@@ -3,10 +3,13 @@ import { Sequelize } from 'sequelize';
 
 dotenv.config();
 
-const sequelize = new Sequelize(process.env.PG_URL, {
+export const sequelize = new Sequelize(process.env.PGDATABASE, process.env.PGUSER, process.env.PGPASSWORD, {
+  host: process.env.PGHOST,
+  port: process.env.PGPORT,
+  dialect: "postgres",
   define: {
-    underscored: true,
-    timestamps: false
+  timestamps: false,
+  underscored: true
   },
 });
 

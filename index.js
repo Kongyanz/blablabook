@@ -4,7 +4,7 @@ import router from "./app/router.js";
 import { setupSession, initUserLocals } from "./app/middlewares/setupSession.middleware.js";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.set("view engine", "ejs");
 app.set("views", "./app/views");
