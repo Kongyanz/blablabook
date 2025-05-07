@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch index.js",
+    "start": "nodemon index.js",
     "db:create": "node app/migrations/createTables.js",
     "db:seed": "node app/migrations/seedTables.js",
     "psql": "psql -U blablabook -d books",
@@ -34,5 +34,8 @@
     "pg": "^8.14.1",
     "postgresql": "^0.0.1",
     "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
