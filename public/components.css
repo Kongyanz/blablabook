@@ -1,0 +1,32 @@
+.burger-button{
+    cursor: pointer;    
+}
+
+.bar--1, .bar--2, .bar--3{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: var(--whitish);
+    margin: 5px 100%;
+}
+
+/* @media screen and (max-width: 480px){ 
+    .bar--1{
+        rotate: ;
+    }
+    .bar--2{
+        opacity: 0% 0.1s;
+
+    }
+    .bar--3{
+        display: none;
+        width: 10%;
+        height: 3px;
+        background-color: var(--whitish);
+        margin: 6px 100%;
+        transform:  ;
+        transition: 0.3s;
+    }
+    
+}
+*/

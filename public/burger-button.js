@@ -1,16 +1,32 @@
-const burger = document.querySelectorAll(".burger-button");
+const burger = document.querySelector(".burger-button");
+const nav = document.querySelector(".nav-list");
 
-function dynamicButton (element)  {
-    element.classList.toggle("change");
-};
+function mobileMenu() {
+    burger.classList.toggle("change");
 
-// biome-ignore lint/complexity/noForEach: <explanation>
-burger.forEach((bar) => {
-    bar.addEventListener("click", () =>{console.log(bar);
-        dynamicButton(bar)});
-});
-{/* <div class="burger-button" aria-label="Menu de navigation en mobile"> */}
-<div class="bar--1"></div>
-<div class="bar--2"></div>
-<div class="bar--3"></div>
-</div>
+     if (nav.classList.contains("open")) {
+        nav.classList.remove("open");
+        nav.classList.add("closing");
+
+        nav.addEventListener("animationend", () => {
+            nav.classList.remove("closing");
+            nav.style.display = "none";
+        }, { once: true });
+    } else {
+        nav.style.display = "flex";
+        nav.classList.add("open");
+    }
+}
+
+function resetMenuOnResize() {
+    if (window.innerWidth > 480) {
+        nav.style.display = "flex";
+        nav.classList.remove("open", "closing");
+    } else if (!nav.classList.contains("open")) {
+        nav.style.display = "none";
+    }
+}
+
+
+burger.addEventListener("click", mobileMenu);
+window.addEventListener("resize", resetMenuOnResize);

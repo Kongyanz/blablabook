@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="BlablaBook est une bibliothèque où vous pourrez découvrir une sélection de bestseller, vous inscrire et gérer votre bibliothèque personnelle." />
+  <meta name="description" content="BlablaBook est une bibliothèque où vous pourrez découvrir une sélection de bestseller, vous inscrire et gérer votre bibliothèque personnelle." />
   <title>BlablaBook</title>
-  <link rel="stylesheet" href="/css/style.css"/>
-  <link rel="stylesheet" href="/css/reset.css"/>
-  <link rel="stylesheet" href="/css/base.css"/>
-  <link rel="stylesheet" href="/css/layout.css"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <script src="/burger-button.js" defer></script>
 </head>
 
@@ -18,11 +18,12 @@
   <header>
 
     <figure>
-      <img src="/icons/logo.svg" alt="logo de BlablaBook" class="logo"/>
+      <img src="/icons/logo.svg" alt="logo de BlablaBook" class="logo" />
     </figure>
 
     <form method="GET" action="/search" class="search-form">
-      <input type="text" name="livre" aria-label="Champ de recherche" class="search-form__text" placeholder="Recherche.."/>
+      <input type="text" name="livre" aria-label="Champ de recherche" class="search-form__text"
+        placeholder="Recherche.." />
       <button type="submit" aria-label="lancer la recherche" class="search-form__button">
         <img src="/icons/loop.svg" alt="" class="loop-icon">
       </button>
@@ -30,18 +31,26 @@
 
     <nav>
       <ul class="nav-list">
-          <li><a href="/" class="nav-list__link" aria-label="Retour à la page d'accueil">Accueil</a></li>
-          <li><a href="/livres" class="nav-list__link" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a></li>
+        <li><a href="/" class="nav-list__link open" aria-label="Retour à la page d'accueil">Accueil</a></li>
+        <li><a href="/livres" class="nav-list__link open" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a></li>
         <% if (typeof user !=='undefined' && user) { %>
           <span>Bonjour <%= user.firstname %></span>
-          <li><a href="/mon-compte" class="nav-list__link" aria-label="Consultez votre profil utilisateur">Mon compte</a></li>
-          <li><a href="/deconnexion" class="nav-list__link" aria-label="Déconnexion de votre compte utilisateur">Déconnexion</a></li>
-          <li> <a href="/ma-bibliotheque" class="nav-list__link" aria-label="Consultez votre bibliothèque">Ma bibliothèque</a></li>
+          <li><a href="/mon-compte" class="nav-list__link open" aria-label="Consultez votre profil utilisateur">Mon
+              compte</a></li>
+          <li><a href="/deconnexion" class="nav-list__link open" aria-label="Déconnexion de votre compte utilisateur">Déconnexion</a></li>
+          <li> <a href="/ma-bibliotheque" class="nav-list__link open" aria-label="Consultez votre bibliothèque">Ma
+              bibliothèque</a></li>
         <% } else { %>
-          <li><a href="/creer-un-compte" class="nav-list__link" aria-label="Créer un compte utilisateur">Inscription</a></li>
-          <li><a href="/connexion" class="nav-list__link" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a></li>
+            <li><a href="/creer-un-compte" class="nav-list__link open"
+                aria-label="Créer un compte utilisateur">Inscription</a></li>
+            <li><a href="/connexion" class="nav-list__link open" aria-label="Connectez-vous pour accéder à votre espace personnel">Connexion</a></li>
         <% } %>
       </ul>
-    </nav>
+      <div class="burger-button" aria-label="Menu de navigation en mobile">
+        <div class="bar--1"></div>
+        <div class="bar--2"></div>
+        <div class="bar--3"></div>
+    </div>
   </header>
+    </nav>
   <main>

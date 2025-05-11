@@ -1,0 +1,76 @@
+.burger-button {
+    cursor: pointer;
+    display: none
+}
+.bar--1, .bar--2, .bar--3 {
+    width: 30px;
+    height: 5px;
+    background-color: var(--whitish);
+    margin: 5px 50px;
+    transition: 0.8s;
+}
+
+@media screen and (max-width: 480px) {
+    header{
+        position: relative;
+        
+    }
+    .burger-button {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .change .bar--1 {
+        transform: translateY(10px) rotate(-45deg);
+    }
+    .change .bar--2 {
+        opacity: 0;
+    }
+    .change .bar--3 {
+        transform: translateY(-11px) rotate(45deg);
+    }
+    .nav-list{
+        display: none;  
+    }
+    .nav-list.open{
+        display: flex; 
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        bottom: -140px;
+        background-color: var(--dark-blue); 
+        animation: slideIn 0.9s forwards;
+    }
+    .nav-list.closing{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        bottom: -140px;
+        background-color: var(--dark-blue); 
+        animation: slideout 0.9s forwards;
+    }
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }        
+    }
+    @keyframes slideout {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }       
+    }
+}
+
+

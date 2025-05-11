@@ -1,14 +1,15 @@
 {
   "name": "blablabook-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projet d'examen de la formation O'Clock - Blablabook",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "db:create": "node app/migrations/createTables.js",
     "db:seed": "node app/migrations/seedTables.js",
     "psql": "psql -U blablabook -d books",
-    "db": "docker exec -it blablabook-database-1 psql -U blablabook -d books"
+    "db": "docker exec -it blablabook-database-1 psql -U blablabook -d books",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "vitest": "^3.1.3"
   }
 }
