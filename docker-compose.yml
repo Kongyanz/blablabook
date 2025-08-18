@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: blablabook_app
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - .:/app
     env_file:
@@ -13,11 +13,7 @@ services:
     depends_on:
       - database
     command: sh -c "npm run db:create && npm run db:seed && npm start"
-  test:
-    build: .
-    volumes:
-      - .:/app
-    command: npm run test
+
   database:
     image: postgres:15
     healthcheck:

@@ -35,11 +35,9 @@
         <li><a href="/livres" class="nav-list__link open" aria-label="Explorer la bibliothèque numérique">Bibliothèque</a></li>
         <% if (typeof user !=='undefined' && user) { %>
           <span>Bonjour <%= user.firstname %></span>
-          <li><a href="/mon-compte" class="nav-list__link open" aria-label="Consultez votre profil utilisateur">Mon
-              compte</a></li>
+          <li><a href="/mon-compte" class="nav-list__link open" aria-label="Consultez votre profil utilisateur">Mon compte</a></li>
           <li><a href="/deconnexion" class="nav-list__link open" aria-label="Déconnexion de votre compte utilisateur">Déconnexion</a></li>
-          <li> <a href="/ma-bibliotheque" class="nav-list__link open" aria-label="Consultez votre bibliothèque">Ma
-              bibliothèque</a></li>
+          <li> <a href="/ma-bibliotheque" class="nav-list__link open" aria-label="Consultez votre bibliothèque">Ma bibliothèque</a></li>
         <% } else { %>
             <li><a href="/creer-un-compte" class="nav-list__link open"
                 aria-label="Créer un compte utilisateur">Inscription</a></li>
@@ -50,7 +48,8 @@
         <div class="bar--1"></div>
         <div class="bar--2"></div>
         <div class="bar--3"></div>
-    </div>
-  </header>
+      </div>
     </nav>
+  </header>
+    
   <main>

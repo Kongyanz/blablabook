@@ -8,8 +8,7 @@
     "db:create": "node app/migrations/createTables.js",
     "db:seed": "node app/migrations/seedTables.js",
     "psql": "psql -U blablabook -d books",
-    "db": "docker exec -it blablabook-database-1 psql -U blablabook -d books",
-    "test": "vitest"
+    "db": "docker exec -it blablabook-database-1 psql -U blablabook -d books"
   },
   "repository": {
     "type": "git",
@@ -25,8 +24,7 @@
   "homepage": "https://github.com/O-clock-Sigyn/projet-blablabook-2#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "bcryptjs": "^3.0.2",
-    "dotenv": "^16.5.0",
+    "dotenv": "^16.6.1",
     "ejs": "^3.1.10",
     "email-validator": "^2.0.4",
     "express": "^5.1.0",
@@ -37,7 +35,6 @@
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10",
-    "vitest": "^3.1.3"
+    "nodemon": "^3.1.10"
   }
 }

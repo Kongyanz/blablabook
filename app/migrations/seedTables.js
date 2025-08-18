@@ -1,7 +1,6 @@
 import { AppUser, Author, Gender, Book, AppUserBook}  from '../models/association.js';
 import sequelize from '../models/sequelize.js';
 
-//
 await AppUser.destroy({
     truncate: true,
     cascade: true,

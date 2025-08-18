@@ -2,30 +2,29 @@
 
     <h2>Bibliothèque</h2>
 
-    <div class="library">
-      <% books.forEach(book=> { %> 
-        <div class="book"> 
-          <a href="/livre/<%= book.id %>">
-            <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
-          </a>
-          <h3><%= book.title %></h3>
-          <p>
-              <% book.authors.forEach((author, index)=> { %>
-              <% if(index> 0) { %>, <% } %>
-                  <%= author.name %>
-                  <%= author.firstname %>
-              <% }) %>
-          </p>
-        </div>
-      <% }) %>
+  <div class="library">
+  <% books.forEach((book, index) => { %> 
+    <div class="book"> 
+      <a href="/livre/<%= book.id %>">
+        <img src="/images/<%= book.cover %>" alt="<%= book.title %>" <% if (index >= 3) { %> loading="lazy" <% } %> />
+      </a>
+      <h3><%= book.title %></h3>
+      <p>
+        <% book.authors.forEach((author, i) => { %>
+          <% if(i > 0) { %>, <% } %>
+          <%= author.name %> <%= author.firstname %>
+        <% }) %>
+      </p>
     </div>
+  <% }) %>
+</div>
 
-    <div class="pagination">
-      <% if (currentPage> 1) { %><a href="/livres?page=1">Première page</a><% } %>
-      <% if (currentPage> 1) { %><a href="/livres?page=<%= currentPage - 1 %>">Précédent</a><% } %>
-      <span>Page <%= currentPage %> sur <%= totalPages %></span>
-      <% if (currentPage < totalPages) { %><a href="/livres?page=<%= currentPage + 1 %>">Suivant</a><% } %>
-      <% if (currentPage < totalPages) { %><a href="/livres?page=<%= totalPages %>">Dernière page</a><% } %>
-    </div>
+<div class="pagination">
+  <% if (currentPage > 1) { %><a href="/livres?page=1">Première page</a><% } %>
+  <% if (currentPage > 1) { %><a href="/livres?page=<%= currentPage - 1 %>">Précédent</a><% } %>
+  <span>Page <%= currentPage %> sur <%= totalPages %></span>
+  <% if (currentPage < totalPages) { %><a href="/livres?page=<%= currentPage + 1 %>">Suivant</a><% } %>
+  <% if (currentPage < totalPages) { %><a href="/livres?page=<%= totalPages %>">Dernière page</a><% } %>
+</div>
 
-  <%-include('partials/footer') %>
+<%-include('partials/footer') %>

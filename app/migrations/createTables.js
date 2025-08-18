@@ -3,5 +3,7 @@ import { AppUser, Author, Gender, Book, AppUserBook }  from '../models/associati
 
 
 
-await sequelize.drop(); 
+await sequelize.drop();
 await sequelize.sync({ force: true });
+console.log('Base réinitialisée ✅');
+await sequelize.close();

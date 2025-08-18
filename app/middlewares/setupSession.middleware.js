@@ -6,14 +6,12 @@ export const setupSession = session({
     secret: 'totototototo',
     resave: false,
     saveUninitialized: false,
-    // ! IL FAUDRA TOUJOURS METTRE SECURE à TRUE SAUF pendant le developpement
     cookie: { 
         secure: false, 
         httpOnly: false ,
         maxAge: 1000 * 60 * 60 * 24 // 1 jour
     },
 });
-
 
 export const initUserLocals = async (req, res, next) => {
     // je recupere l'id du user dans la session 

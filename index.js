@@ -10,7 +10,6 @@ app.set("view engine", "ejs");
 app.set("views", "./app/views");
 
 app.use(express.static("public"));
-app.use("/favicon.ico", express.static("./public/images/logo.svg"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(setupSession);

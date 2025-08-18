@@ -1,4 +1,3 @@
-//import sequelize from "../../models/sequelize";
 import emailValidator from "email-validator";
 import PasswordValidator from "password-validator";
 import bcrypt from "bcrypt";
