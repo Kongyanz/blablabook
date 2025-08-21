@@ -1,4 +1,4 @@
-name: Blablabook application
+name: Blablabook web application
 
 on:
   push:
