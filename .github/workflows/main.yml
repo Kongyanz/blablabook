@@ -1,4 +1,5 @@
-name: Blablabook application
+name: Lancement de l'application sans Docker
+
 on:
   push:
     branches: [ main ]
@@ -20,6 +21,9 @@ jobs:
 
       - name: Installer les dépendances
         run: npm install
+
+      - name: Vérifier DATABASE_URL
+        run: echo "DATABASE_URL=$DATABASE_URL"
 
       - name: Lancer l’application
         run: npm start
