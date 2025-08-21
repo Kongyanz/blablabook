@@ -1,5 +1,4 @@
-name: Lancement de l'application
-
+name: Blablabook application
 on:
   push:
     branches: [ main ]
