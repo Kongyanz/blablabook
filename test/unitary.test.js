@@ -17,3 +17,13 @@ describe('', () => {
     expect(validerIdentifiants('gloriaexample.com', 'secret123')).toBe(false);
   });
 });
+
+
+
+
+
+
+
+
+
+
