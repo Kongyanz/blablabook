@@ -8,7 +8,7 @@ header{
     width: 100%;
 }
 .logo{
-    width: 100%;    
+    width: 3rem;    
 }
 .search-form{
     position: relative;
@@ -16,11 +16,11 @@ header{
     align-items: center;
 }
 .search-form__text{
-    background-color: var(--sandy);
+    background-color: var(--sand);
     border: none;
     border-radius: 10px;
-    width: 100%;
-    max-width: 300px;
+    width: 400px;
+    max-width: 700px;
     height: 50px;
 }
 .search-form__button{
@@ -29,13 +29,14 @@ header{
     height: auto;
     background: none;
     border: none;
+    right: 0px;
     cursor: pointer;
-    left: 125px;
+    left: 340px;
     color: var(--sandy);
 }
 .loop-icon{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 .nav-list{
     display: flex;
@@ -57,15 +58,49 @@ h1{
     margin: 2rem 0;
     font-size: xx-large;
 }
-welcome-section__lead{
-    display: flex;
-    justify-content: center;
+h2{
+    margin-left: 1rem;
 }
-
+.welcome-section__lead{
+    text-align: center;
+  margin: 2rem auto;
+  max-width: auto;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+.books-container{
+    display: flex;
+    justify-content:space-around;
+    margin: 1rem 0;
+}
+.book-card {
+  width: 180px; /* largeur fixe */
+  flex-grow: 0; /* ne pas s’étirer */
+  flex-shrink: 0;
+  flex-basis: 180px;
+}
+.book-title{
+    color: #565450;
+}
+.book-author{
+    color: var(--sandy);
+}
 
 /*footer*/
 footer{
-    background-color: var(--sand);
+    background-color: var(--dark-blue);
     display: flex;
     justify-content: space-evenly;
+    padding: 20px 0;
+    
+}
+.footer__menu{
+    list-style-type: none;
+}
+.footer__menu-item{
+    text-decoration: none;
+    color: var(--whitish);
+}
+.footer__text{
+    color: var(--whitish);
 }

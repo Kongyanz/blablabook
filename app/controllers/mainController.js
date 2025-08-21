@@ -3,7 +3,6 @@
 
 	export const mainController = {
 		async renderHomePage(req, res) {
-			console.log(req.session?.userId);
 			const books = await Book.findAll({
 				order: sequelize.random(),
 				limit: 5,
@@ -16,7 +15,6 @@
 					},
 				],
 			});
-
 			res.render("home", { books });
 		},
 	};

@@ -17,11 +17,11 @@
           <a href="/livre/<%= book.id %>">
             <img src="/images/<%= book.cover %>" alt="<%= book.title %>" />
           </a>
-          <h3>
+          <h3 class="book-title">
             <%= book.title %>
           </h3>
           <p>
-            <strong>
+            <strong class="book-author">
               <%= book.authors[0].name %>
               <%= book.authors[0].firstname %>
             </strong>

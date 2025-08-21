@@ -42,33 +42,27 @@ export const authController = {
 
 			const errors = {};
 
+			if (!password || !schema.validate(password))
+				errors.password =
+					"Mot de passe non conforme (8 caractères avec 1 majuscule, 1 chiffre, 1 symbole minimum)";
+			if (password !== confirmation)
+				errors.confirmation = "Les deux mots de passe doivent être identiques";
+
 			if (!firstname) errors.firstname = "Le champ prénom doit être rempli";
 			if (!lastname) errors.lastname = "Le champ nom doit être rempli";
 			if (!email || !emailValidator.validate(email))
 				errors.email = "Mettez un email valide";
-
-			// 🔹 Vérification du mot de passe
-			if (!password || !schema.validate(password))
-				errors.password =
-					"Mot de passe non conforme ! (8 caractères, 1 majuscule, 1 chiffre, 1 symbole)";
-
-			if (password !== confirmation)
-				errors.confirmation = "Les deux mots de passe doivent être identiques";
-
-			//Vérification de l'existence de l'utilisateur
 			if (!errors.email) {
 				const existingUser = await AppUser.findOne({ where: { email } });
 				if (existingUser) errors.email = "Email existant";
 			}
 
-			// ✅ Gestion des erreurs et affichage du formulaire
 			if (Object.keys(errors).length > 0) {
 				return res
 					.status(422)
 					.render("auth/signup", { errors, data: req.body });
 			}
 
-			// ✅ Hachage du mot de passe et enregistrement en base
 			const hashedPassword = await bcrypt.hash(password, 10);
 			const user = await AppUser.create({
 				firstname,

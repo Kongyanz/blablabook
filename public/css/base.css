@@ -1,13 +1,9 @@
 :root {
 	--dark-blue: #16293d;
-	--light-cream: #e3d9c0;
+	--light-cream: #E3D9C0;
 	--sand: #d5c09a;
-	--sandy: #c5a97c;
-	--charcoal: #565450;
-	--pale-gold: #d7c8a8;
-	--caramel: #65450d;
+	--sandy: #563F25;
 	--whitish: #edebdc;
-	--dark-sand: #50493b;
 }
 body {
 	background-color: var(--light-cream);

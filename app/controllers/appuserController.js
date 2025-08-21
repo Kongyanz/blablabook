@@ -21,11 +21,11 @@ export const appuserController = {
 				return res.redirect("/");
 			}
 
-			res.render("user-informations", { user }); // Render the account page with user data
+			res.render("user-informations", { user });
 		} catch (error) {
-			console.error("Error fetching account page:", error);
-			// res.redirect("/"); // Redirect to an error page in case of an unexpected error
-			res.status(500).render("errors/500", { error: "Erreur interne" });
+			console.error("Erreur lors de l'accès à la page compte :", error.message);
+			res.status(500).render("errors/500", { error:
+				 "Une erreur est survenue lors du chargement de votre compte."});
 		}
 	},
 
@@ -51,7 +51,7 @@ export const appuserController = {
 		try {
 			const userId = req.session.userId;
 			if (!userId) {
-				return res.redirect("auth/login");
+				return res.redirect("/");
 			}
 
 			const userBooks = await AppUserBook.findAll({

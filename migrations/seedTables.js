@@ -1,12 +1,12 @@
 import { AppUser, Author, Gender, Book, AppUserBook}  from '../models/association.js';
 import sequelize from '../models/sequelize.js';
 
-await AppUser.destroy({
-    truncate: true,
+await Author.destroy({
+    truncate: true, 
     cascade: true,
     restartIdentity: true,
 });
-await Author.destroy({
+await AppUser.destroy({
     truncate: true,
     cascade: true,
     restartIdentity: true,
@@ -27,7 +27,7 @@ await AppUserBook.destroy({
     restartIdentity: true,
 });
 
-//Fake data creation
+
 const userData = await AppUser.bulkCreate([
     { name: "Jean", firstname: "Dupont", email:"dupont@at.com", password:"azerty"},
     { name: "Marie", firstname: "Durand", email: "durand@at.com", password:"azerty"} 

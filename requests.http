@@ -1,0 +1,10 @@
+### login
+GET http://localhost:3001/connexion
+
+###login
+POST http://localhost:3001/connexion
+Content-Type: application/x-www-form-urlencoded
+X-CSRF-TOKEN: vdmjnybWUdq6kgkp_BBEI_cj
+Cookie: connect.sid=s%3AM1zdXD7f7JdtiARLW7Yw2xpKgmi88FAU.yrxSkmLN7f2Cqapgox6%2Bt8LT8y7gc%2BvFZwipfqU0MxA
+
+email=gn3886121@gmail.com&password=Gloria97&_csrf=ZdV0L93y-AXmYgEwM1c1hylHICSCjja8eIxM

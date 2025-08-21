@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "db:create": "node app/migrations/createTables.js",
-    "db:seed": "node app/migrations/seedTables.js",
+    "db:create": "node migrations/createTables.js",
+    "db:seed": "node migrations/seedTables.js",
     "psql": "psql -U blablabook -d books",
-    "db": "docker exec -it blablabook-database-1 psql -U blablabook -d books"
+    "db": "docker exec -it blablabook-database-1 psql -U gloria -d books"
   },
   "repository": {
     "type": "git",
@@ -28,13 +28,17 @@
     "ejs": "^3.1.10",
     "email-validator": "^2.0.4",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
     "express-session": "^1.18.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
     "password-validator": "^5.3.0",
     "pg": "^8.14.1",
     "postgresql": "^0.0.1",
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
+    "cypress": "^15.0.0",
     "nodemon": "^3.1.10"
   }
 }
