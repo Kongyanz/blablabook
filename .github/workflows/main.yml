@@ -1,4 +1,4 @@
-name: Lancement de l'application sans Docker
+name: Blablabook application
 
 on:
   push:
