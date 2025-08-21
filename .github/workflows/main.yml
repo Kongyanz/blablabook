@@ -8,7 +8,7 @@ jobs:
   run-app:
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DATABASE_URL: ${{ secrets.PG_URL }}
 
     steps:
       - name: Récupérer le code
