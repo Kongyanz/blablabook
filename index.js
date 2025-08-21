@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import { setupSession, initUserLocals, } from './app/middlewares/setupSession.middleware.js';
 import router from './app/router.js';
 
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
