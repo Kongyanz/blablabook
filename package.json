@@ -8,7 +8,8 @@
     "db:create": "node migrations/createTables.js",
     "db:seed": "node migrations/seedTables.js",
     "psql": "psql -U blablabook -d books",
-    "db": "docker exec -it blablabook-database-1 psql -U gloria -d books"
+    "db": "docker exec -it blablabook-database-1 psql -U gloria -d books",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,8 @@
   },
   "devDependencies": {
     "cypress": "^15.0.0",
-    "nodemon": "^3.1.10"
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
   }
 }
