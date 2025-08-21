@@ -6,7 +6,7 @@ export const setupSession = session({
     resave: false,
     saveUninitialized: false,
     cookie: { 
-        secure: true,
+        secure: process.env.NODE_ENV === 'production',
         sameSite: "strict", 
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 // 1 jour
