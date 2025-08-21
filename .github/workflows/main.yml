@@ -7,20 +7,20 @@ on:
 jobs:
   run-app:
     runs-on: ubuntu-latest
-  env:
-    DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
-    - name: Fetch the code
-      uses: actions/checkout@v3
+      - name: Récupérer le code
+        uses: actions/checkout@v3
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '22'
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    - name: Install dépendancies
-      run: npm install
+      - name: Installer les dépendances
+        run: npm install
 
-    - name: Start application
-      run: npm start 
+      - name: Lancer l’application
+        run: npm start
