@@ -1,4 +1,4 @@
-name: Blablabook web application
+name: Blablabook web application workflow
 
 on:
   push:
@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: ${{ secrets.PG_URL }}
+      SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
 
     steps:
       - name: Récupérer le code
