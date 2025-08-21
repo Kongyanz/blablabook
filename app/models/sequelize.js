@@ -3,7 +3,7 @@ import { Sequelize } from 'sequelize';
 
 dotenv.config();
 
-export const sequelize = new Sequelize(process.env.PG_URL, {
+export const sequelize = new Sequelize(process.env.DATABASE_URL, {
   //host: process.env.DB_HOST,
   //port: process.env.PGPORT,
   dialect: "postgres",
@@ -12,6 +12,7 @@ export const sequelize = new Sequelize(process.env.PG_URL, {
   underscored: true
   },
 });
+
 
 try {
   await sequelize.authenticate();
